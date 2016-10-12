@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Roomie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Roomie" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Roomie" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   <body>
-    <%= yield %>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+       <%= render 'layouts/messages' %>
+       <%= yield %>
+    </main>
+       <%= render 'layouts/navigation' %>
   </body>
 </html>
