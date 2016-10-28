@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028124051) do
+ActiveRecord::Schema.define(version: 20161028220854) do
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "user_name"
+    t.string   "gender"
+    t.boolean  "is_a_smoker"
+    t.boolean  "pet_friendly"
+    t.integer  "cleanliness_level"
+    t.integer  "outgoingness_level"
+    t.integer  "quietness_level"
+    t.boolean  "has_residence_already"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "postal_code"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
