@@ -1,3 +1,5 @@
+gem install bundler
+bundle update
 bundle install
 rake db:drop
 rake db:migrate
