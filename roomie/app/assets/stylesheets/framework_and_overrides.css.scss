@@ -10,12 +10,18 @@ img {
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
+  color: #000000 !important;
   }
 
 .navbar-default {
     background-image: url(columbia.jpg);
     background:transparent;
     border-width: 0px;
+    color: white; 
+}
+
+.navbar-text {
+   color: #FFFFFF !important;
 }
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
