@@ -42,11 +42,15 @@ img {
 main {
   @extend .container;
   background-image: url(columbia.jpg);
+  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center;
   background-size: cover;
+  //background-attachment: fixed;
+  //background-size: cover;
   //background-color: #eee;
   //padding-bottom: 80px;
-  height:100vh;  
+  min-height:100vh;  
   width: 100%;
   //margin-top: 51px; // accommodate the navbar
   }
