@@ -1,3 +1,4 @@
+<div class="profileform">
 <%= form_for([@user,@profile], url: user_profile_path(@user)) do |f| %>
   <% if profile.errors.any? %>
     <div id="error_explanation">
@@ -81,3 +82,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+    </div>
+
