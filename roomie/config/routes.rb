@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
-  resources :profiles
+  #resources :profiles 
   devise_for :users
   get 'home/index'
-  #root 'home#index'	
+  #root 'home#index'
+
+  resources :users do
+    resource :profile
+  end
+
+
+
+	
   devise_scope :user do
     authenticated :user do
       root 'home#index', as: :authenticated_root
