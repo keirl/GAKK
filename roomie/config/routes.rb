@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resource :profile
   end
 
-
+  resources :users do
+    resource :preferences
+  end
 
 	
   devise_scope :user do

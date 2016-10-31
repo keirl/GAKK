@@ -6,6 +6,11 @@
 	   	<% else %>
 	   	 	<%= link_to "Edit User Profile", edit_user_profile_path(current_user),  :class => 'btn btn-default navbar-btn pull-right'  %>
 	    <% end %>
+            <% if current_user.preferences.nil? %>
+                  <%= link_to "Create User Preferences", new_user_preferences_path(current_user),  :class => 'btn btn-default navbar-btn pull-right'  %>
+            <% else %>
+                  <%= link_to "Edit User Preferences", edit_user_preferences_path(current_user),  :class => 'btn btn-default navbar-btn pull-right'  %>
+          <% end %>
             <p class="navbar-text pull-right">  Logged in as <strong><%= current_user.email %></strong>. </p>
 <%else %>
             <%= link_to "Login", new_user_session_path, :class=> 'btn btn-default navbar-btn pull-right'%>

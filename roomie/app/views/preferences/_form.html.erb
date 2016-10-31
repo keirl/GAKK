@@ -1,0 +1,110 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    if ($("#looking_for_residence").is(":checked")) {
+      $("#address").show();
+    } else {
+      $("#address").hide();
+    }
+  });
+
+  $(function () {
+    $("#looking_for_residence").click(function () {
+      if ($(this).is(":checked")) {
+        $("#address").show();
+      } else {
+        $("#address").hide();
+      }
+    });
+  });
+
+
+</script>
+
+
+<div class="preferencesform">
+  <%= form_for([@user, @preferences], url: user_preferences_path(@user)) do |f| %>
+      <% if preferences.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(preferences.errors.count, "error") %> prohibited these preferences from being saved:</h2>
+
+            <ul>
+              <% preferences.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :gender, "What is your preferred roommate gender?" %>
+        <%= f.select :gender, ['Male', 'Female', 'Non-Binary'], class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :smoker, "Do you prefer a roommate that smokes?" %>
+        <%= f.select :smoker, [['No', false], ['Yes']], class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :pet_friendly, "Do you prefer a roommate with a pet?" %>
+        <%= f.select :pet_friendly, [['No', false], ['Yes', true]], class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :cleanliness_level, "How clean do you prefer your roommate to be?" %>
+        <%= f.select :cleanliness_level, [['I want to be matched with a slob', 1], ['Slightly messy', 2], ['Average', 3], ['Clean', 4], ['I expect the apartment to sparkle', 5]], class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :outgoingness_level, "How outgoing do you prefer your roommate?" %>
+        <%= f.select :outgoingness_level, [['I want a roommate that guards the apartment 25-8', 1], ['I want a roommate thats not too outgoing', 2], ['I just want a normal roommate...', 3], ['I want a roommate that likes meeting new people often', 4], ['I want a roommate that will be heard from a mile away', 5]], class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :quietness_level, "How quiet do you want your roommate to be?" %>
+        <%= f.select :quietness_level, [["If I hear them I don't want them", 1], ['On the quieter side', 2],
+                                        ["Somewhere in the middle. Considerate", 3], ['A vocal roommate', 4], ['I was going to buy noise-cancelling headphones anyway', 5]], class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :looking_for_residence, "A roommate with a residence." %>
+        <%= f.check_box :looking_for_residence,:id=> "looking_for_residence"%>
+      </div>
+
+      <div id="address">
+        <div>
+          <label>Close to this location:</label>
+        </div>
+        <div class="field">
+          <%= f.label :street %>
+          <%= f.text_field :street %>
+        </div>
+
+        <div class="field">
+          <%= f.label :city %>
+          <%= f.text_field :city %>
+        </div>
+
+        <div class="field">
+          <%= f.label :state %>
+          <%= f.select :state, ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
+                                'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO',
+                                'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK',
+                                'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV',
+                                'WY'], class: "form-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :postal_code %>
+          <%= f.text_field :postal_code %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+
+
+  <% end %>
+</div>
+

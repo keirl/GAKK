@@ -112,6 +112,27 @@ section {
 }
 
 
+.preferencesform {
+  padding-top: 90px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.preferencesform form {
+  @extend .well;
+  @extend .well-lg;
+  padding-bottom: 40px;
+}
+.preferencesform .right {
+  float: right !important;
+}
+.preferencesform .button {
+  @extend .btn;
+  @extend .btn-primary;
+}
+.preferencesform fieldset {
+  @extend .well;
+}
+
 
 #error_explanation:not(:empty) {
   @extend .alert;
