@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
+  before_filter :load_user
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
-
   # GET /profiles
   # GET /profiles.json
   def index
@@ -40,7 +40,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to user_profile_path(@profile,@user), notice: 'Profile was successfully created.' }
+        format.html { redirect_to :back, notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: user_profile_path(@profile,@user) }
       else
         format.html { render :new }
@@ -58,7 +58,7 @@ class ProfilesController < ApplicationController
    
     respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to user_profile_path(@profile,@user), notice: 'Profile was successfully updated.' }
+        format.html { redirect_to :back , notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :edit }
@@ -82,8 +82,13 @@ class ProfilesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+    def load_user
+         @user = current_user
+    end
+
     def set_profile
-      @user = User.find(params[:user_id]);
+      @user = current_user
       @profile = @user.profile
     end
 

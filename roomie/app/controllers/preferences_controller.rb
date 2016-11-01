@@ -40,7 +40,7 @@ class PreferencesController < ApplicationController
 
     respond_to do |format|
       if @preferences.save
-        format.html { redirect_to user_preferences_path(@preferences,@user), notice: 'Preferences were successfully created.' }
+        format.html { redirect_to :back, notice: 'Preferences were successfully created.' }
         format.json { render :show, status: :created, location: user_preferences_path(@preferences,@user) }
       else
         format.html { render :new }
@@ -58,7 +58,7 @@ class PreferencesController < ApplicationController
    
     respond_to do |format|
       if @preferences.update(preferences_params)
-        format.html { redirect_to user_preferences_path(@preferences,@user), notice: 'Preferences were successfully updated.' }
+        format.html { redirect_to :back, notice: 'Preferences were successfully updated.' }
         format.json { render :show, status: :ok, location: @preferences }
       else
         format.html { render :edit }

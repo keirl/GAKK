@@ -1,64 +1,68 @@
-<p id="notice"><%= notice %></p>
+<div id="jumbo1" class="jumbotron">
 
-<p>
-  <strong>User name:</strong>
-  <%= @profile.user_name %>
-</p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @profile.gender %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Is a smoker:</strong>
-  <%= @profile.is_a_smoker %>
-</p>
+  <p>
+    <strong>User name:</strong>
+    <%= @profile.user_name %>
+  </p>
 
-<p>
-  <strong>Pet friendly:</strong>
-  <%= @profile.pet_friendly %>
-</p>
+  <p>
+    <strong>Gender:</strong>
+    <%= @profile.gender %>
+  </p>
 
-<p>
-  <strong>Cleanliness level:</strong>
-  <%= @profile.cleanliness_level %>
-</p>
+  <p>
+    <strong>Is a smoker:</strong>
+    <%= @profile.is_a_smoker %>
+  </p>
 
-<p>
-  <strong>Outgoingness level:</strong>
-  <%= @profile.outgoingness_level %>
-</p>
+  <p>
+    <strong>Pet friendly:</strong>
+    <%= @profile.pet_friendly %>
+  </p>
 
-<p>
-  <strong>Quietness level:</strong>
-  <%= @profile.quietness_level %>
-</p>
+  <p>
+    <strong>Cleanliness level:</strong>
+    <%= @profile.cleanliness_level %>
+  </p>
 
-<p>
-  <strong>Has residence already:</strong>
-  <%= @profile.has_residence_already %>
-</p>
+  <p>
+    <strong>Outgoingness level:</strong>
+    <%= @profile.outgoingness_level %>
+  </p>
 
-<p>
-  <strong>Street:</strong>
-  <%= @profile.street %>
-</p>
+  <p>
+    <strong>Quietness level:</strong>
+    <%= @profile.quietness_level %>
+  </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @profile.city %>
-</p>
+  <p>
+    <strong>Has residence already:</strong>
+    <%= @profile.has_residence_already %>
+  </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @profile.state %>
-</p>
+  <p>
+    <strong>Street:</strong>
+    <%= @profile.street %>
+  </p>
 
-<p>
-  <strong>Postal code:</strong>
-  <%= @profile.postal_code %>
-</p>
+  <p>
+    <strong>City:</strong>
+    <%= @profile.city %>
+  </p>
 
-<%= link_to 'Edit', edit_user_profile_path(@user,@profile) %> |
-<%= link_to 'Back', user_profile_path(@user, @profile) %>
+  <p>
+    <strong>State:</strong>
+    <%= @profile.state %>
+  </p>
+
+  <p>
+    <strong>Postal code:</strong>
+    <%= @profile.postal_code %>
+  </p>
+
+  <%= link_to 'Edit', edit_user_profile_path(@user, @profile) %> |
+  <%= link_to 'Back', user_profile_path(@user, @profile) %>
+</div>
