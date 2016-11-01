@@ -137,6 +137,7 @@ section {
 #error_explanation:not(:empty) {
   @extend .alert;
   @extend .alert-danger;
+
 }
 #error_explanation h2 {
   font-size: 16px;
@@ -145,4 +146,12 @@ section {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-xs;
+}
+.alert, #error_explanation:not(:empty) {
+  padding: 15px;
+  margin-bottom: 20px;
+  margin-top: 70px;
+  margin-left: 0px;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
