@@ -40,7 +40,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to :back, notice: 'Profile was successfully created.' }
+        format.html { redirect_to edit_user_profile_path(@user,@profile), notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: user_profile_path(@profile,@user) }
       else
         format.html { render :new }
