@@ -48,7 +48,10 @@ group :development do
 end
 
 group :test do
+  gem 'rspec-rails', '~> 3.5'
   gem 'cucumber-rails', :require => false
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'email_spec'
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
 end
@@ -65,3 +68,4 @@ gem 'devise'
 #mail catcher: do not put this on the Gemfile
 #need to manually install : gem install mailcatcher
 #gem 'mailcatcher', '~> 0.5.12'
+
