@@ -44,3 +44,13 @@ Then I should fill in email with an non_existant email
 Then I should fill in password with an non_existant password
 Then I should click the login button
 Then I should see Invalid Email or password.
+
+Scenario: An unconfirmed user should not be able to sign in
+When I go to the homepage
+Then I should see a login button
+Then I should click on the login button
+Then I should visit the login page
+Then I should fill in email with an unconfirmed_user email
+Then I should fill in password with an unconfirmed_user password
+Then I should click the login button
+Then I should see You have to confirm your email address before continuing.

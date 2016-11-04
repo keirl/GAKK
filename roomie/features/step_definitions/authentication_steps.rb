@@ -83,4 +83,20 @@ Then(/^I should see Invalid Email or password\.$/) do
   has_text?('Invalid Email or password.')
 end
 
+unconfirmed_user = FactoryGirl.build(:unconfirmed_user)
+
+
+#for test 5
+Then(/^I should fill in email with an unconfirmed_user email$/) do
+  fill_in 'Email', :with => unconfirmed_user.email
+end
+
+Then(/^I should fill in password with an unconfirmed_user password$/) do
+  fill_in 'Password', :with => unconfirmed_user.password
+end
+
+Then(/^I should see You have to confirm your email address before continuing\.$/) do
+  has_text?('You have to confirm your email address before continuing.')
+end
+
 
