@@ -99,4 +99,51 @@ Then(/^I should see You have to confirm your email address before continuing\.$/
   has_text?('You have to confirm your email address before continuing.')
 end
 
+#for test 6
+Then(/^I should fill in my password confirmation that does not match the password$/) do
+  fill_in 'Password confirmation', :with => "password"
+end
+
+Then(/^I should see Password confirmation doesn't match Password\.$/) do
+  has_text?("Password confirmation doesn't match Password.")
+end
+
+
+#for test 7
+
+password_reset_user = FactoryGirl.build(:password_reset_user)
+
+Then(/^I should click on the forgotten password link$/) do
+  click_on('Forgot password')
+end
+
+Then(/^I should enter my email address$/) do
+  fill_in 'Email', :with => password_reset_user.email
+end
+
+Then(/^I should click on reset password button$/) do
+  click_on("Reset Password")
+end
+
+Then(/^I should not see Email not found\.$/) do
+  !has_text?("Email not found")
+end
+
+Then(/^I should see You will receive an email with instructions on how to reset your password in a few minutes\.$/) do
+  has_text?("You will receive an email with instructions on how to reset your password in a few minutes.")
+end
+
+Then(/^I should fill in New password$/) do
+  fill_in 'New password', :with => "new_password"
+end
+
+Then(/^I should fill in Confirm new password$/) do
+  fill_in 'Confirm new password', :with => "new_password"
+end
+
+Then(/^I should see Your password has been changed successfully\. You are now signed in\.$/) do
+  has_text?('Your password has been changed successfully. You are now signed in.')
+end
+
+
 

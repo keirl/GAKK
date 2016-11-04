@@ -54,3 +54,28 @@ Then I should fill in email with an unconfirmed_user email
 Then I should fill in password with an unconfirmed_user password
 Then I should click the login button
 Then I should see You have to confirm your email address before continuing.
+
+Scenario: An user with mismatched password and password confirmation should not be able to sign up
+When I go to the homepage
+Then I should fill in my email
+Then I should fill in my password
+Then I should fill in my password confirmation that does not match the password
+Then I should click on sign up button
+Then I should see Password confirmation doesn't match Password.
+
+Scenario: An user with forgotten password
+When I go to the homepage
+Then I should see a login button
+Then I should click on the login button
+Then I should click on the forgotten password link
+Then I should enter my email address
+Then I should click on reset password button
+Then I should not see Email not found.
+Then I should see You will receive an email with instructions on how to reset your password in a few minutes.
+#Then "password_reset_user@gmail.com" should receive an email
+#Then I should see "Reset password instructions" in the email subject
+#Then I click the first link in the email
+#Then I should fill in New password
+#Then I should fill in Confirm new password
+#Then I should see Your password has been changed successfully. You are now signed in.
+
