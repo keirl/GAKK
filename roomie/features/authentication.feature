@@ -26,3 +26,11 @@ Then I should fill in email with my email
 Then I should fill in password with my password
 Then I should click the login button
 Then I should see Signed in successfully.
+
+Scenario: An existing user should not be able to sign up again
+When I go to the homepage
+Then I should fill in email with my existing email
+Then I should fill in my password with my existing password
+Then I should fill in my password confirmation with my existing password
+Then I should click on sign up button
+Then I should Email has already been taken

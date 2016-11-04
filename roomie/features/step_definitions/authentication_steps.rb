@@ -34,14 +34,14 @@ Then(/^I should visit the login page$/) do
   visit new_user_session_path
 end
 
-user = FactoryGirl.build(:existing_user)
+existing_user = FactoryGirl.build(:existing_user)
 
 Then(/^I should fill in email with my email$/) do
-  fill_in 'Email', :with => user.email
+  fill_in 'Email', :with => existing_user.email
 end
 
 Then(/^I should fill in password with my password$/) do
-  fill_in 'Email', :with => user.password
+  fill_in 'Password', :with => existing_user.password
 end
 
 Then(/^I should click the login button$/) do
@@ -50,6 +50,24 @@ end
 
 Then(/^I should see Signed in successfully\.$/) do
   has_text?('Signed in successfully.')
+end
+
+#for test 3
+
+Then(/^I should fill in email with my existing email$/) do
+  fill_in 'Email', :with => existing_user.email
+end
+
+Then(/^I should fill in my password with my existing password$/) do
+  fill_in 'Password', :with => existing_user.password
+end
+
+Then(/^I should fill in my password confirmation with my existing password$/) do
+  fill_in 'Password confirmation', :with => existing_user.password
+end
+
+Then(/^I should Email has already been taken$/) do
+  has_text?('Email has already been taken.')
 end
 
 
