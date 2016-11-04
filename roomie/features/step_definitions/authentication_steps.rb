@@ -70,5 +70,17 @@ Then(/^I should Email has already been taken$/) do
   has_text?('Email has already been taken.')
 end
 
+#for test 4
+Then(/^I should fill in email with an non_existant email$/) do
+  fill_in 'Email', :with => "non_existant_user@gmail.com"
+end
+
+Then(/^I should fill in password with an non_existant password$/) do
+  fill_in 'Password', :with => "non_existant_password"
+end
+
+Then(/^I should see Invalid Email or password\.$/) do
+  has_text?('Invalid Email or password.')
+end
 
 
