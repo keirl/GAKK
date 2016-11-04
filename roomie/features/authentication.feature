@@ -24,7 +24,7 @@ Then I should click on the login button
 Then I should visit the login page
 Then I should fill in email with my email
 Then I should fill in password with my password
-Then I should click the login button
+Then I should click the sign in button
 Then I should see Signed in successfully.
 
 Scenario: An existing user should not be able to sign up again
@@ -42,7 +42,7 @@ Then I should click on the login button
 Then I should visit the login page
 Then I should fill in email with an non_existant email
 Then I should fill in password with an non_existant password
-Then I should click the login button
+Then I should click the sign in button
 Then I should see Invalid Email or password.
 
 Scenario: An unconfirmed user should not be able to sign in
@@ -52,7 +52,7 @@ Then I should click on the login button
 Then I should visit the login page
 Then I should fill in email with an unconfirmed_user email
 Then I should fill in password with an unconfirmed_user password
-Then I should click the login button
+Then I should click the sign in button
 Then I should see You have to confirm your email address before continuing.
 
 Scenario: An user with mismatched password and password confirmation should not be able to sign up
@@ -79,3 +79,14 @@ Then I should see You will receive an email with instructions on how to reset yo
 #Then I should fill in Confirm new password
 #Then I should see Your password has been changed successfully. You are now signed in.
 
+Scenario: An existing user should be able to reset the password
+When I go to the homepage
+Then I should click on the login button
+Then I should fill in email with my existing email
+Then I should fill in my password with my existing password
+Then I should click the sign in button
+Then I should click on Edit Account
+Then I should fill in Password with the new password
+Then I should fill in Password confirmation with the new password
+Then I should fill in Current password with the existing password
+Then I should see Your account has been updated successfully.

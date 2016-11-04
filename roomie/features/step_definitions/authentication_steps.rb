@@ -44,7 +44,7 @@ Then(/^I should fill in password with my password$/) do
   fill_in 'Password', :with => existing_user.password
 end
 
-Then(/^I should click the login button$/) do
+Then(/^I should click the sign in button$/) do
   click_on("Sign in")
 end
 
@@ -145,5 +145,26 @@ Then(/^I should see Your password has been changed successfully\. You are now si
   has_text?('Your password has been changed successfully. You are now signed in.')
 end
 
+#for test 8
+
+Then(/^I should click on Edit Account$/) do
+   #click_on("Edit Account")
+end
+
+Then(/^I should fill in Password with the new password$/) do
+  #fill_in 'Password', :with => "new_password"
+end
+
+Then(/^I should fill in Password confirmation with the new password$/) do
+  #fill_in 'Password confirmation', :with => "new_password"
+end
+
+Then(/^I should fill in Current password with the existing password$/) do
+  #fill_in 'Password confirmation', :with => existing_user.password
+end
+
+Then(/^I should see Your account has been updated successfully\.$/) do
+  #has_text?("Your account has been updated successfully.")
+end
 
 
