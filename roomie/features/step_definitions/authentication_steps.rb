@@ -1,3 +1,8 @@
+existing_user = FactoryGirl.create(:existing_user)
+unconfirmed_user = FactoryGirl.build(:unconfirmed_user)
+password_reset_user = FactoryGirl.build(:password_reset_user)
+
+
 When(/^I go to the homepage$/) do
   visit '/'
 end
@@ -34,7 +39,6 @@ Then(/^I should visit the login page$/) do
   visit new_user_session_path
 end
 
-existing_user = FactoryGirl.build(:existing_user)
 
 Then(/^I should fill in email with my email$/) do
   fill_in 'Email', :with => existing_user.email
@@ -83,7 +87,6 @@ Then(/^I should see Invalid Email or password\.$/) do
   has_text?('Invalid Email or password.')
 end
 
-unconfirmed_user = FactoryGirl.build(:unconfirmed_user)
 
 
 #for test 5
@@ -111,7 +114,6 @@ end
 
 #for test 7
 
-password_reset_user = FactoryGirl.build(:password_reset_user)
 
 Then(/^I should click on the forgotten password link$/) do
   click_on('Forgot password')
@@ -145,26 +147,31 @@ Then(/^I should see Your password has been changed successfully\. You are now si
   has_text?('Your password has been changed successfully. You are now signed in.')
 end
 
-#for test 8
+#An existing user should be able to reset the password
 
 Then(/^I should click on Edit Account$/) do
-   #click_on("Edit Account")
+   click_on("Edit Account")
 end
 
 Then(/^I should fill in Password with the new password$/) do
-  #fill_in 'Password', :with => "new_password"
+  fill_in 'Password', :with => "new_password"
 end
 
 Then(/^I should fill in Password confirmation with the new password$/) do
-  #fill_in 'Password confirmation', :with => "new_password"
+  fill_in 'Password confirmation', :with => "new_password"
 end
 
 Then(/^I should fill in Current password with the existing password$/) do
-  #fill_in 'Password confirmation', :with => existing_user.password
+  fill_in 'Password confirmation', :with => existing_user.password
 end
 
 Then(/^I should see Your account has been updated successfully\.$/) do
   #has_text?("Your account has been updated successfully.")
 end
 
+#An non existing user should not be able use the forgotten password feature
+
+Then(/^I should see Email not found\.$/) do
+  has_text?("Email not found")
+end
 

@@ -6,6 +6,5 @@ rake db:migrate
 
 rake db:seed
 
-echo "Running Tests with cucumber"
-rake cucumber:all
+sh run_test_script.sh
 rails server

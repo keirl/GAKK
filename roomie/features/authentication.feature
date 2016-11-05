@@ -82,11 +82,20 @@ Then I should see You will receive an email with instructions on how to reset yo
 Scenario: An existing user should be able to reset the password
 When I go to the homepage
 Then I should click on the login button
-Then I should fill in email with my existing email
-Then I should fill in my password with my existing password
+Then I should fill in email with my email
+Then I should fill in password with my password
 Then I should click the sign in button
 Then I should click on Edit Account
 Then I should fill in Password with the new password
 Then I should fill in Password confirmation with the new password
 Then I should fill in Current password with the existing password
 Then I should see Your account has been updated successfully.
+
+Scenario: An non existing user should not be able use the forgotten password feature
+When I go to the homepage
+Then I should see a login button
+Then I should click on the login button
+Then I should click on the forgotten password link
+Then I should fill in email with an non_existant email
+Then I should click on reset password button
+Then I should see Email not found.
