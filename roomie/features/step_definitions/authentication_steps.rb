@@ -1,6 +1,6 @@
 existing_user = FactoryGirl.create(:existing_user)
 unconfirmed_user = FactoryGirl.build(:unconfirmed_user)
-password_reset_user = FactoryGirl.build(:password_reset_user)
+password_reset_user = FactoryGirl.create(:password_reset_user)
 
 
 When(/^I go to the homepage$/) do
@@ -166,7 +166,7 @@ Then(/^I should fill in Current password with the existing password$/) do
 end
 
 Then(/^I should see Your account has been updated successfully\.$/) do
-  #has_text?("Your account has been updated successfully.")
+  has_text?("Your account has been updated successfully.")
 end
 
 #An non existing user should not be able use the forgotten password feature
