@@ -2,7 +2,6 @@
 
 Feature: Authentication Feature
 
-
 Scenario: A new user should be able to sign up
 When I go to the homepage
 Then I should fill in my email
