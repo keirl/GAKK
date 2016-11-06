@@ -47,28 +47,28 @@
 
       <div class="field">
         <%= f.label :gender, "What is your gender?" %>
-        <%= f.select :gender, ['Male', 'Female', 'Non-Binary'], class: "form-control" %>
+        <%= f.select :gender, [[' ', nil], 'Male', 'Female', 'Non-Binary'], class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :is_a_smoker, "Do you smoke?" %>
-        <%= f.select :is_a_smoker, [['No', false], ['Yes']], class: "form-control" %>
+        <%= f.select :is_a_smoker, [[' ', nil], ['No', false], ['Yes', true]], class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :pet_friendly, "Do you have any pets that will be living with you?" %>
-        <%= f.select :pet_friendly, [['No', false], ['Yes', true]], class: "form-control" %>
+        <%= f.select :pet_friendly, [[' ', nil], ['No', false], ['Yes', true]], class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :cleanliness_level, "How clean are you?" %>
-        <%= f.select :cleanliness_level, [['Some might call me a slob', 1], ['A bit messy', 2], ['Average', 3],
+        <%= f.select :cleanliness_level, [[' ', nil], ['Some might call me a slob', 1], ['A bit messy', 2], ['Average', 3],
                                           ['Nice and tidy', 4], ['Neat. Freak.', 5]], class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :outgoingness_level, "How outgoing are you?" %>
-        <%= f.select :outgoingness_level, [['Not even at the party', 1], ['Wallflower', 2],
+        <%= f.select :outgoingness_level, [[' ', nil], ['Not even at the party', 1], ['Wallflower', 2],
                                            ['I stick to the people I know', 3], ['I like meeting new people', 4],
                                            ['I am the loudest one there', 5]], class: "form-control" %>
 
@@ -76,7 +76,7 @@
 
       <div class="field">
         <%= f.label :quietness_level, "How quiet are you?" %>
-        <%= f.select :quietness_level, [["You probably won't know I'm home", 1], ['On the quieter side', 2],
+        <%= f.select :quietness_level, [[' ', nil], ["You probably won't know I'm home", 1], ['On the quieter side', 2],
                                         ["Somewhere in the middle. Considerate", 3], ['I like things a big louder', 4],
                                         ['I have awesome taste in music, and I want to share it with EVERYBODY', 5]], class: "form-control" %>
       </div>
