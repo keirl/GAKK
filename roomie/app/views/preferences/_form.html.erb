@@ -42,32 +42,32 @@
 
       <div class="field">
         <%= f.label :gender, "What is your preferred roommate gender?" %>
-        <%= f.select :gender, ['Male', 'Female', 'Non-Binary'], class: "form-control" %>
+        <%= f.select :gender, [[' ', nil], 'Male', 'Female', 'Non-Binary'], class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :smoker, "Do you prefer a roommate that smokes?" %>
-        <%= f.select :smoker, [['No', false], ['Yes']], class: "form-control" %>
+        <%= f.select :smoker, [[' ', nil], ['No', false], ['Yes', true]], class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :pet_friendly, "Do you prefer a roommate with a pet?" %>
-        <%= f.select :pet_friendly, [['No', false], ['Yes', true]], class: "form-control" %>
+        <%= f.select :pet_friendly, [[' ', nil], ['No', false], ['Yes', true]], class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :cleanliness_level, "How clean do you prefer your roommate to be?" %>
-        <%= f.select :cleanliness_level, [['I want to be matched with a slob', 1], ['Slightly messy', 2], ['Average', 3], ['Clean', 4], ['I expect the apartment to sparkle', 5]], class: "form-control" %>
+        <%= f.select :cleanliness_level, [[' ', nil], ['I want to be matched with a slob', 1], ['Slightly messy', 2], ['Average', 3], ['Clean', 4], ['I expect the apartment to sparkle', 5]], class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :outgoingness_level, "How outgoing do you prefer your roommate?" %>
-        <%= f.select :outgoingness_level, [['I want a roommate that guards the apartment 25-8', 1], ['I want a roommate thats not too outgoing', 2], ['I just want a normal roommate...', 3], ['I want a roommate that likes meeting new people often', 4], ['I want a roommate that will be heard from a mile away', 5]], class: "form-control" %>
+        <%= f.select :outgoingness_level, [[' ', nil], ['I want a roommate that guards the apartment 25-8', 1], ['I want a roommate thats not too outgoing', 2], ['I just want a normal roommate...', 3], ['I want a roommate that likes meeting new people often', 4], ['I want a roommate that will be heard from a mile away', 5]], class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :quietness_level, "How quiet do you want your roommate to be?" %>
-        <%= f.select :quietness_level, [["If I hear them I don't want them", 1], ['On the quieter side', 2],
+        <%= f.select :quietness_level, [[' ', nil], ["If I hear them I don't want them", 1], ['On the quieter side', 2],
                                         ["Somewhere in the middle. Considerate", 3], ['A vocal roommate', 4], ['I was going to buy noise-cancelling headphones anyway', 5]], class: "form-control" %>
       </div>
 
