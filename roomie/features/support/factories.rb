@@ -18,4 +18,11 @@ FactoryGirl.define do
     password_confirmation "top secret"
     confirmed_at Time.now
   end
+
+  factory :preferences_user, :parent => :user do
+    email "preferences_user@gmail.com"
+    password "top secret"
+    password_confirmation "top secret"
+  end
 end
+
