@@ -40,6 +40,10 @@
           </div>
       <% end %>
 
+      <div class="actions" style="float:right; margin-top:-25px; margin-right:-25px;">
+        <%= link_to "X", user_preferences_path(@user, @preferences), {:class=>"btn btn-default"} %>
+      </div>
+
       <div class="field">
         <%= f.label :gender, "What is your preferred roommate gender?" %>
         <%= f.select :gender, [[' ', nil], 'Male', 'Female', 'Non-Binary'], class: "form-control" %>
