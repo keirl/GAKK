@@ -11,7 +11,7 @@ end
     
 
 Then(/^I should see the preferences form$/) do
-  has_text?('Create preferences')
+  assert_text 'New Preferences'
 end
     
 
@@ -91,7 +91,7 @@ end
     
 
 Then(/^I should see preferences updated.$/) do
-  has_text?('Preferences were successfully created.')
+  assert_text 'Preferences were successfully created.'
 end
 
 When(/^I click on edit user preferences$/) do
@@ -105,10 +105,10 @@ end
 
 
 Then(/^I should see error message$/) do
-  page.has_text?('singing in the rain')
+  assert_text 'error'
 end
 
 
 Then(/^I should fail to select my street preference: (.*)$/) do |pref_street|
-  !fill_in 'street_address', :with => pref_street
+  assert_no_text 'street address'
 end
