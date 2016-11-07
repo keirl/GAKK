@@ -122,7 +122,7 @@ Scenario: User needs to create user preferences and needs a residence. Adds addr
     Then I should select my street preference: 355 5th Avenue
     Then I should select my city preference: New York
     Then I should select my state preference: NY
-    Then I should select my postal code preference: 07011
+    Then I should select my postal code preference: 070116
     Then I should submit the update
     Then I should see error message
 
@@ -178,6 +178,6 @@ Scenario: User needs to create user preferences and needs a residence. Adds city
     Then I should select my street preference: 355 5th Avenue
     Then I should select my city preference: New York!
     Then I should select my state preference: NY
-    Then I should select my postal code preference: 070116
+    Then I should select my postal code preference: 07011
     Then I should submit the update
     Then I should see error message 
