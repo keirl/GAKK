@@ -1,12 +1,13 @@
 Feature: As a user, I should be able to fill out the preferences to find a new roommate.
 
   Scenario: User needs to create user preferences and needs a residence.
+    Given I am an existing user
     When I go to the homepage
     Then I should see a login button
     Then I should click on the login button
     Then I should visit the login page
-    Then I should fill in email with my email
-    Then I should fill in password with my password
+    Then I should fill in email with my existing email
+    Then I should fill in my password with my existing password
     Then I should click the sign in button
     Then I should see Signed in successfully.
     Then I should see the create user preferences button
@@ -27,12 +28,13 @@ Feature: As a user, I should be able to fill out the preferences to find a new r
     Then I should see preferences updated.
 
   Scenario: User needs to create user preferences and does not need a residence.
+    Given I am an existing user
     When I go to the homepage
     Then I should see a login button
     Then I should click on the login button
     Then I should visit the login page
-    Then I should fill in email with my email
-    Then I should fill in password with my password
+    Then I should fill in email with my existing email
+    Then I should fill in my password with my existing password
     Then I should click the sign in button
     Then I should see Signed in successfully.
     Then I should see the create user preferences button
@@ -49,12 +51,13 @@ Feature: As a user, I should be able to fill out the preferences to find a new r
     Then I should see preferences updated.
 
   Scenario: User needs to create user preferences and does not need a residence. Tries to add residence information.
+    Given I am an existing user
     When I go to the homepage
     Then I should see a login button
     Then I should click on the login button
     Then I should visit the login page
-    Then I should fill in email with my email
-    Then I should fill in password with my password
+    Then I should fill in email with my existing email
+    Then I should fill in my password with my existing password
     Then I should click the sign in button
     Then I should see Signed in successfully.
     Then I should see the create user preferences button
@@ -70,12 +73,13 @@ Feature: As a user, I should be able to fill out the preferences to find a new r
     Then I should fail to select my street preference: 355 5th Avenue
 
 Scenario: User needs to create user preferences and needs a residence. Adds address with special characters.
+    Given I am an existing user
     When I go to the homepage
     Then I should see a login button
     Then I should click on the login button
     Then I should visit the login page
-    Then I should fill in email with my email
-    Then I should fill in password with my password
+    Then I should fill in email with my existing email
+    Then I should fill in my password with my existing password
     Then I should click the sign in button
     Then I should see Signed in successfully.
     Then I should see the create user preferences button
@@ -96,12 +100,13 @@ Scenario: User needs to create user preferences and needs a residence. Adds addr
     Then I should see error message
 
  Scenario: User needs to create user preferences and needs a residence. Adds zip code with 6 digits
+    Given I am an existing user
     When I go to the homepage
     Then I should see a login button
     Then I should click on the login button
     Then I should visit the login page
-    Then I should fill in email with my email
-    Then I should fill in password with my password
+    Then I should fill in email with my existing email
+    Then I should fill in my password with my existing password
     Then I should click the sign in button
     Then I should see Signed in successfully.
     Then I should see the create user preferences button
@@ -123,12 +128,13 @@ Scenario: User needs to create user preferences and needs a residence. Adds addr
 
 
  Scenario: User needs to create user preferences and needs a residence. Adds zip code non digit characters.
+    Given I am an existing user
     When I go to the homepage
     Then I should see a login button
     Then I should click on the login button
     Then I should visit the login page
-    Then I should fill in email with my email
-    Then I should fill in password with my password
+    Then I should fill in email with my existing email
+    Then I should fill in my password with my existing password
     Then I should click the sign in button
     Then I should see Signed in successfully.
     Then I should see the create user preferences button
@@ -150,12 +156,13 @@ Scenario: User needs to create user preferences and needs a residence. Adds addr
 
   
 Scenario: User needs to create user preferences and needs a residence. Adds city with special characters.
+    Given I am an existing user
     When I go to the homepage
     Then I should see a login button
     Then I should click on the login button
     Then I should visit the login page
-    Then I should fill in email with my email
-    Then I should fill in password with my password
+    Then I should fill in email with my existing email
+    Then I should fill in my password with my existing password
     Then I should click the sign in button
     Then I should see Signed in successfully.
     Then I should see the create user preferences button
