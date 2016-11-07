@@ -1,14 +1,15 @@
-existing_user = FactoryGirl.create(:existing_user)
-unconfirmed_user = FactoryGirl.build(:unconfirmed_user)
 password_reset_user = FactoryGirl.create(:password_reset_user)
 
+Given(/^I am an existing user$/) do
+  existing_user = FactoryGirl.create(:existing_user)
+end
 
 When(/^I go to the homepage$/) do
   visit '/'
 end
 
 Then(/^I should fill in my email$/) do
-  fill_in 'Email', :with => 'new_user@gmail.com'   
+  fill_in 'Email', :with => 'new_user@gmail.com'
 end
 
 Then(/^I should fill in my password$/) do
@@ -24,7 +25,7 @@ Then(/^I should click on sign up button$/) do
 end
 
 Then(/^I should see Your email address has been successfully confirmed\.$/) do
-  has_text?('I should see Your email address has been successfully confirmed.')
+  assert_text('Your email address has been successfully confirmed.')
 end
 
 Then(/^I should see a login button$/) do
@@ -53,25 +54,27 @@ Then(/^I should click the sign in button$/) do
 end
 
 Then(/^I should see Signed in successfully\.$/) do
-  has_text?('Signed in successfully.')
+  assert_text('Signed in successfully.')
 end
 
 #for test 3
 
+
 Then(/^I should fill in email with my existing email$/) do
-  fill_in 'Email', :with => existing_user.email
+  fill_in 'Email', :with => 'existing_user@gmail.com'
+
 end
 
 Then(/^I should fill in my password with my existing password$/) do
-  fill_in 'Password', :with => existing_user.password
+  fill_in 'Password', :with => 'top secret'
 end
 
 Then(/^I should fill in my password confirmation with my existing password$/) do
-  fill_in 'Password confirmation', :with => existing_user.password
+  fill_in 'Password confirmation', :with => 'top secret'
 end
 
 Then(/^I should Email has already been taken$/) do
-  has_text?('Email has already been taken.')
+  assert_text('Email has already been taken')
 end
 
 #for test 4
@@ -84,22 +87,26 @@ Then(/^I should fill in password with an non_existant password$/) do
 end
 
 Then(/^I should see Invalid Email or password\.$/) do
-  has_text?('Invalid Email or password.')
+  assert_text('Invalid Email or password.')
 end
 
 
 
 #for test 5
+Given(/^I am an unconfirmed user$/) do
+  unconfirmed_user = FactoryGirl.create(:unconfirmed_user)
+end
+
 Then(/^I should fill in email with an unconfirmed_user email$/) do
-  fill_in 'Email', :with => unconfirmed_user.email
+  fill_in 'Email', :with => 'unconfirmed_user@gmail.com'
 end
 
 Then(/^I should fill in password with an unconfirmed_user password$/) do
-  fill_in 'Password', :with => unconfirmed_user.password
+  fill_in 'Password', :with => 'top secret'
 end
 
 Then(/^I should see You have to confirm your email address before continuing\.$/) do
-  has_text?('You have to confirm your email address before continuing.')
+  assert_text('You have to confirm your email address before continuing.')
 end
 
 #for test 6
@@ -108,7 +115,7 @@ Then(/^I should fill in my password confirmation that does not match the passwor
 end
 
 Then(/^I should see Password confirmation doesn't match Password\.$/) do
-  has_text?("Password confirmation doesn't match Password.")
+  assert_text("Password confirmation doesn't match Password")
 end
 
 
@@ -132,7 +139,7 @@ Then(/^I should not see Email not found\.$/) do
 end
 
 Then(/^I should see You will receive an email with instructions on how to reset your password in a few minutes\.$/) do
-  has_text?("You will receive an email with instructions on how to reset your password in a few minutes.")
+  assert_text("You will receive an email with instructions on how to reset your password in a few minutes.")
 end
 
 Then(/^I should fill in New password$/) do
@@ -143,8 +150,13 @@ Then(/^I should fill in Confirm new password$/) do
   fill_in 'Confirm new password', :with => "new_password"
 end
 
+Then(/^I should click on Change my Password button$/) do
+  click_on('Change my Password')
+end
+
+
 Then(/^I should see Your password has been changed successfully\. You are now signed in\.$/) do
-  has_text?('Your password has been changed successfully. You are now signed in.')
+  assert_text('Your password has been changed successfully. You are now signed in.')
 end
 
 #An existing user should be able to reset the password
@@ -162,16 +174,21 @@ Then(/^I should fill in Password confirmation with the new password$/) do
 end
 
 Then(/^I should fill in Current password with the existing password$/) do
-  fill_in 'Password confirmation', :with => existing_user.password
+  fill_in 'Current password', :with => 'top secret'
 end
 
+Then(/^I should click on update button$/) do
+   click_on("Update")
+end
+
+
 Then(/^I should see Your account has been updated successfully\.$/) do
-  has_text?("Your account has been updated successfully.")
+  assert_text("Your account has been updated successfully.")
 end
 
 #An non existing user should not be able use the forgotten password feature
 
 Then(/^I should see Email not found\.$/) do
-  has_text?("Email not found")
+  assert_text("Email not found")
 end
 
