@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031024509) do
+ActiveRecord::Schema.define(version: 20161107151552) do
 
   create_table "preferences", force: :cascade do |t|
     t.string   "gender"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20161031024509) do
     t.string   "street"
     t.string   "city"
     t.string   "state"
-    t.integer  "postal_code"
+    t.string   "postal_code"
     t.integer  "user_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20161031024509) do
     t.string   "street"
     t.string   "city"
     t.string   "state"
-    t.integer  "postal_code"
+    t.string   "postal_code"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.integer  "user_id"
