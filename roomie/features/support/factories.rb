@@ -30,7 +30,27 @@ FactoryGirl.define do
       email "profile_user@gmail.com"
       password "top secret"
       password_confirmation "top secret"
+
+      profile
   end
+
+  factory :profile, class: Profile do
+    profile_user
+    user_name 'existing-user'
+    gender 'Female'
+    is_a_smoker false
+    pet_friendly false
+    cleanliness_level 1
+    outgoingness_level 1
+    quietness_level 1
+    has_residence_already 1
+    street '120 Broadway'
+    city 'New York'
+    state 'NY'
+    postal_code '10027'
+  end
+
+
 
 end
 
