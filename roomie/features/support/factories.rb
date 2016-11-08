@@ -25,5 +25,12 @@ FactoryGirl.define do
     password "top secret"
     password_confirmation "top secret"
   end
+
+  factory :profile_user, :parent => :user do
+      email "profile_user@gmail.com"
+      password "top secret"
+      password_confirmation "top secret"
+  end
+
 end
 
