@@ -135,15 +135,16 @@ end
 Then(/^I should see profile updated$/) do
   assert_text "Profile was successfully updated." 
 end
+Given(/^I am an existing user with a profile$/) do
+  existing_user = FactoryGirl.create(:user_with_profile)
+  puts existing_user.profile.postal_code
 
+end
 Given(/^my profile has an address$/) do
-  pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^I should get an error saying the postal code can't be blank$/) do
   assert_text "Postal code can't be blank"
 end
 
-Given(/^I am an existing user with a profile$/) do
-  existing_user = FactoryGirl.create(:profile_user)
-end
+
