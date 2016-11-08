@@ -125,7 +125,7 @@ end
 
 
 Then(/^I click on Edit User Profile link$/) do
-  click_on("Edit Profile")
+  click_on("Edit User Profile")
 end
 
 
