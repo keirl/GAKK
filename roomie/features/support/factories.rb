@@ -39,7 +39,7 @@ FactoryGirl.define do
   end
 
     factory :profile, class: Profile do
-      user_name 'blah'
+      user_name 'existing-username'
       gender 'Female'
       is_a_smoker false
       pet_friendly false

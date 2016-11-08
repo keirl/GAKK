@@ -42,11 +42,11 @@ end
 
 
 Then(/^I should fill in email with my email$/) do
-  fill_in 'Email', :with => existing_user.email
+  fill_in 'Email', :with => @existing_user.email
 end
 
 Then(/^I should fill in password with my password$/) do
-  fill_in 'Password', :with => existing_user.password
+  fill_in 'Password', :with => @existing_user.password
 end
 
 Then(/^I should click the sign in button$/) do

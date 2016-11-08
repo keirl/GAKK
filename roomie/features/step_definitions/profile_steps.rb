@@ -1,5 +1,3 @@
-
-
 Then(/^I should see the create user profile button$/) do
   find_link('Create User Profile').visible?
 end
@@ -23,6 +21,9 @@ end
 
 
 Then(/^I should fill in my username: (.*)$/) do |prof_username|
+  if prof_username == 'existing-username'
+    dummy_user = FactoryGirl.create(:user_with_profile)
+  end
   fill_in 'profile_user_name', :with => prof_username
   @prof_username = prof_username
 end
@@ -135,12 +136,13 @@ end
 Then(/^I should see profile updated$/) do
   assert_text "Profile was successfully updated." 
 end
-Given(/^I am an existing user with a profile$/) do
-  existing_user = FactoryGirl.create(:user_with_profile)
-  puts existing_user.profile.postal_code
 
+Given(/^I am an existing user with a profile$/) do
+  @existing_user = FactoryGirl.create(:user_with_profile)
 end
+
 Given(/^my profile has an address$/) do
+  puts @existing_user.profile.postal_code
 end
 
 Then(/^I should get an error saying the postal code can't be blank$/) do

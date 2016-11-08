@@ -318,6 +318,7 @@ Scenario: A user without an address should be able to edit their profile
     Then I should click on the login button
     Then I should visit the login page
     Then I should fill in email with my email 
+    Then I should fill in password with my password
     Then I should click the sign in button
     Then I should see Signed in successfully.
     Then I should see the edit user profile button
