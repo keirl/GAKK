@@ -30,11 +30,16 @@ FactoryGirl.define do
       email "profile_user@gmail.com"
       password "top secret"
       password_confirmation "top secret"
+
+      factory :user_with_profile do
+        after(:create) do |profile_user|
+          create(:profile, user: profile_user)
+        end
+      end
   end
 
   factory :profile, class: Profile do
-    profile_user
-    user_name 'existing-user'
+    user_name 'blah'
     gender 'Female'
     is_a_smoker false
     pet_friendly false
