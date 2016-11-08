@@ -30,6 +30,7 @@ FactoryGirl.define do
       email "profile_user@gmail.com"
       password "top secret"
       password_confirmation "top secret"
+      confirmed_at Time.now
   end
 
   factory :profile, class: Profile do
