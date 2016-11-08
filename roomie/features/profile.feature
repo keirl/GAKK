@@ -317,8 +317,7 @@ Scenario: A user without an address should be able to edit their profile
     Then I should see a login button
     Then I should click on the login button
     Then I should visit the login page
-    Then I should fill in email with my existing email
-    Then I should fill in my password with my existing password
+    Then I should fill in email with my email 
     Then I should click the sign in button
     Then I should see Signed in successfully.
     Then I should see the edit user profile button
@@ -336,8 +335,8 @@ Scenario: A user with an address should be able to edit their profile
     Then I should see a login button
     Then I should click on the login button
     Then I should visit the login page
-    Then I should fill in email with my existing email
-    Then I should fill in my password with my existing password
+    Then I should fill in email with my email 
+    Then I should fill in password with my password
     Then I should click the sign in button
     Then I should see Signed in successfully.
     Then I should see the edit user profile button
@@ -355,8 +354,8 @@ Scenario: A user who updates their profile to no longer have an address and save
     Then I should see a login button
     Then I should click on the login button
     Then I should visit the login page
-    Then I should fill in email with my existing email
-    Then I should fill in my password with my existing password
+    Then I should fill in email with my email 
+    Then I should fill in password with my password
     Then I should click the sign in button
     Then I should see Signed in successfully.
     Then I should see the edit user profile button
@@ -373,9 +372,6 @@ Scenario: A user who updates their profile to no longer have an address and save
     Then I should select my state: NY
     Then I should submit Update Profile
     Then I should get an error saying the postal code can't be blank
-
-
-
 
 
 

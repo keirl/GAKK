@@ -35,7 +35,6 @@ FactoryGirl.define do
   end
 
   factory :profile, class: Profile do
-    profile_user
     user_name 'existing-user'
     gender 'Female'
     is_a_smoker false
