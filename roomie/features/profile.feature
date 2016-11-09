@@ -347,7 +347,7 @@ Scenario: A user with an address should be able to edit their profile
     Then I should submit Update Profile
     Then I should see profile updated
 
-
+@javascript
 Scenario: A user who updates their profile to no longer have an address and saves it should have their old address deleted
     Given I am an existing user 
     When I go to the homepage
