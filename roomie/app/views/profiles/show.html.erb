@@ -5,62 +5,62 @@
 
   <p>
     <strong>User name:</strong>
-    <%= @profile.user_name %>
+    <%= @profile ? @profile.user_name : "" %>
   </p>
 
   <p>
     <strong>Gender:</strong>
-    <%= @profile.gender %>
+    <%= @profile ? @profile.gender : "" %>
   </p>
 
   <p>
     <strong>Is a smoker:</strong>
-    <%= @profile.is_a_smoker %>
+    <%= @profile ? @profile.is_a_smoker : "" %>
   </p>
 
   <p>
     <strong>Pet friendly:</strong>
-    <%= @profile.pet_friendly %>
+    <%= @profile ? @profile.pet_friendly : ""%>
   </p>
 
   <p>
     <strong>Cleanliness level:</strong>
-    <%= @profile.cleanliness_level %>
+    <%= @profile ? @profile.cleanliness_level : ""%>
   </p>
 
   <p>
     <strong>Outgoingness level:</strong>
-    <%= @profile.outgoingness_level %>
+    <%= @profile ? @profile.outgoingness_level : ""%>
   </p>
 
   <p>
     <strong>Quietness level:</strong>
-    <%= @profile.quietness_level %>
+    <%= @profile ? @profile.quietness_level : ""%>
   </p>
 
   <p>
     <strong>Has residence already:</strong>
-    <%= @profile.has_residence_already %>
+    <%= @profile ? @profile.has_residence_already : ""%>
   </p>
 
   <p>
     <strong>Street:</strong>
-    <%= @profile.street %>
+    <%= @profile ? @profile.street : ""%>
   </p>
 
   <p>
     <strong>City:</strong>
-    <%= @profile.city %>
+    <%= @profile ? @profile.city : ""%>
   </p>
 
   <p>
     <strong>State:</strong>
-    <%= @profile.state %>
+    <%= @profile ? @profile.state : ""%>
   </p>
 
   <p>
     <strong>Postal code:</strong>
-    <%= @profile.postal_code %>
+    <%= @profile ? @profile.postal_code : ""%>
   </p>
 
   <%= link_to 'Edit', edit_user_profile_path(@user, @profile) %> |
