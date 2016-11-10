@@ -56,6 +56,11 @@
   <%= @preferences ? @preferences.postal_code : ""%>
 </p>
 
-<%= link_to 'Edit', edit_user_preferences_path(@user,@preferences) %> |
-<%= link_to 'Back', user_preferences_path(@user, @preferences) %>
+<% if @preferences != nil %>
+  <%= link_to 'Edit', edit_user_preferences_path(@user,@preferences) %> |
+  <%= link_to 'Back', user_preferences_path(@user, @preferences) %>
+<% else %>
+  <%= link_to 'Edit', new_user_preferences_path(@user,@preferences) %> |
+  <%= link_to 'Back', user_preferences_path(@user, @preferences) %>
+<% end %>
 </div>
