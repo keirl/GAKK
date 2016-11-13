@@ -1,7 +1,7 @@
 password_reset_user = FactoryGirl.create(:password_reset_user)
 
 Given(/^I am an existing user$/) do
-  existing_user = FactoryGirl.create(:existing_user)
+  @@existing_user = FactoryGirl.create(:existing_user)
 end
 
 When(/^I go to the homepage$/) do

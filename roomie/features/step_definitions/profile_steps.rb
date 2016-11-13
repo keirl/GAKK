@@ -149,4 +149,9 @@ Then(/^I should get an error saying the postal code can't be blank$/) do
   assert_text "Postal code can't be blank"
 end
 
+Then(/^I longitute and latitude should not be blank$/) do
+  expect(@@existing_user.profile.latitude)
+  expect(@@existing_user.profile.longitude)
+
+end
 

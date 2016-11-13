@@ -119,12 +119,14 @@
         </div>
       </div>
 
-      <div class="actions">
-        <%= f.submit %>
-      </div>
+
       <% if !@profile.street.nil? %>
         <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@profile.latitude}%2C#{@profile.longitude}" %>
       <% end %>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
 
 <% end %>
 </div>
