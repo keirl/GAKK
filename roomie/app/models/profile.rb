@@ -6,16 +6,17 @@ class Profile < ApplicationRecord
 	validates :outgoingness_level, presence: true
 	validates :quietness_level, presence: true
 
-
 	validates :street, :format => {:with => /\A[a-zA-Z\d\-\s]+\z/, :message => "only allows letters, spaces, numbers and dashes"}, :if => :has_residence_already
  	validates :city, :format => {:with => /\A[a-zA-Z\d\-\s]+\z/, :message => "only allows letters, spaces, numbers and dashes"}, :if => :has_residence_already
-
-
-
 	validate :is_a_smoker_presence
 	validate :pet_friendly_presence
 
+
+
 	validates_presence_of :street, :city, :state, :postal_code, :if => :has_residence_already
+
+	geocoded_by :full_street_address   # can also be an IP address
+	after_validation :geocode          # auto-fetch coordinates
 
 	
 	def is_a_smoker_presence
@@ -24,9 +25,11 @@ class Profile < ApplicationRecord
 
 	def pet_friendly_presence
 		errors.add(:pet_friendly, "can't be blank") if pet_friendly.nil?
-	end 
+	end
 
-
+	def full_street_address
+		[street, city, state, postal_code].compact.join(', ')
+	end
 
 	belongs_to :user
 end

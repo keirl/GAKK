@@ -27,6 +27,8 @@
 
 
 <div class="profileform">
+
+
   <%= form_for([@user, @profile], url: user_profile_path(@user)) do |f| %>
       <div class="actions" style="float:right; margin-top:-25px; margin-right:-25px;">
         <%= link_to "X", home_index_path, {:class=>"btn btn-default"} %>
@@ -120,8 +122,10 @@
       <div class="actions">
         <%= f.submit %>
       </div>
+      <% if !@profile.street.nil? %>
+        <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@profile.latitude}%2C#{@profile.longitude}" %>
+      <% end %>
 
-
-  <% end %>
+<% end %>
 </div>
 

@@ -70,3 +70,5 @@ gem 'devise'
 #need to manually install : gem install mailcatcher
 #gem 'mailcatcher', '~> 0.5.12'
 
+# to get the lat and long from the address
+gem 'geocoder'
