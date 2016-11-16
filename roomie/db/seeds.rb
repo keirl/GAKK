@@ -26,3 +26,5 @@ Profile.create(user_name: 'akila3',
                user_id: user4.id,
                latitude: nil,
                longitude: nil)
+
+admin = Admin.create! :email => 'admin@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
