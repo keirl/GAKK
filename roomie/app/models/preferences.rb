@@ -14,6 +14,8 @@ class Preferences < ApplicationRecord
 
 	validates_presence_of :street, :city, :state, :postal_code, :if => :looking_for_residence
 
+	geocoded_by :full_street_address   # can also be an IP address
+	after_validation :geocode          # auto-fetch coordinates
 	
 	def smoker_presence
 		errors.add(:smoker, "can't be blank") if smoker.nil?
@@ -22,6 +24,10 @@ class Preferences < ApplicationRecord
 	def pet_friendly_presence
 		errors.add(:pet_friendly, "can't be blank") if pet_friendly.nil?
 	end 
+
+	def full_street_address
+		[street, city, state, postal_code].compact.join(', ')
+	end
 
 	belongs_to :user
 

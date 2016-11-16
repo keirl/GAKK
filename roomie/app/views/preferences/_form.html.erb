@@ -114,6 +114,9 @@
         <%= f.submit %>
       </div>
 
+      <% if @preferences.street? %>
+          <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@preferences.latitude}%2C#{@preferences.longitude}&key=AIzaSyD21LGyl1gmCSllj3pjilRZaALCO5ZaA_0" %>
+      <% end %>
 
   <% end %>
 </div>
