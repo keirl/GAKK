@@ -15,32 +15,27 @@
 
   <p>
     <strong>Is a smoker:</strong>
-    <%= @profile ? @profile.is_a_smoker : "" %>
+    <%= @profile ? Profile.profileIsASmoker.key(@profile.is_a_smoker) : "" %>
   </p>
 
   <p>
     <strong>Pet friendly:</strong>
-    <%= @profile ? @profile.pet_friendly : ""%>
+    <%= @profile ? Profile.profilePetFriendly.key(@profile.pet_friendly) : ""%>
   </p>
 
   <p>
     <strong>Cleanliness level:</strong>
-    <%= @profile ? @profile.cleanliness_level : ""%>
+    <%= @profile ? Profile.profileCleanlinessLevel.key(@profile.cleanliness_level) : ""%>
   </p>
 
   <p>
     <strong>Outgoingness level:</strong>
-    <%= @profile ? @profile.outgoingness_level : ""%>
+    <%= @profile ? Profile.profileOutgoingnessLevel.key(@profile.outgoingness_level) : ""%>
   </p>
 
   <p>
     <strong>Quietness level:</strong>
-    <%= @profile ? @profile.quietness_level : ""%>
-  </p>
-
-  <p>
-    <strong>Has residence already:</strong>
-    <%= @profile ? @profile.has_residence_already : ""%>
+    <%= @profile ? Profile.profileQuietnessLevel.key(@profile.quietness_level) : ""%>
   </p>
 
   <p>

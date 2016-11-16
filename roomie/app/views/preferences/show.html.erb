@@ -8,32 +8,27 @@
 
 <p>
   <strong>Smoking roommate:</strong>
-  <%= @preferences ? @preferences.smoker : ""%>
+  <%= @preferences ? Preferences.preferencesSmoker.key(@preferences.smoker) : ""%>
 </p>
 
 <p>
   <strong>Pet friendly:</strong>
-  <%= @preferences ? @preferences.pet_friendly : ""%>
+  <%= @preferences ? Preferences.preferencesPetFriendly.key(@preferences.pet_friendly) : ""%>
 </p>
 
 <p>
   <strong>Cleanliness level:</strong>
-  <%= @preferences ? @preferences.cleanliness_level : ""%>
+  <%= @preferences ? Preferences.preferencesCleanlinessLevel.key(@preferences.cleanliness_level) : ""%>
 </p>
 
 <p>
   <strong>Outgoingness level:</strong>
-  <%= @preferences ? @preferences.outgoingness_level : ""%>
+  <%= @preferences ? Preferences.preferencesOutgoingnessLevel.key(@preferences.outgoingness_level) : ""%>
 </p>
 
 <p>
   <strong>Quietness level:</strong>
-  <%= @preferences ? @preferences.quietness_level : ""%>
-</p>
-
-<p>
-  <strong>Looking for Residence:</strong>
-  <%= @preferences ? @preferences.looking_for_residence : ""%>
+  <%= @preferences ? Preferences.preferencesQuietnessLevel.key(@preferences.quietness_level) : ""%>
 </p>
 
 <p>
