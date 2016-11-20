@@ -6,4 +6,62 @@ class User < ApplicationRecord
 
   has_one :profile
   has_one :preferences
+
+  def get_matches
+  	if preferences?
+  		# pref_score = calculate_preferences_score(preferences)
+  		matches = Hash.new
+  		Profile.all.each do |prof|
+	  		if prof?
+	  			if preferences.gender != prof.gender || preferences.smoker != prof.is_a_smoker# || preferences.parent == prof.parent
+	  				next
+	  			end
+	  			# prof_score = calculate_profile_score(prof)
+	  			percent_match = get_percent_match(preferences, prof)
+	  			if percent_match < 50
+	  				next
+	  			end
+	  			prof_parent_id = prof.parent.id
+	  			matches[:prof_parent_id] = percent_match
+	   		end
+	   	end
+	   	if matches.empty?
+	   		no_matches_alert = "No matches were found yet. Sorry! Your preferences are just too Xtreme!
+	   							Either adjust your preferences or tell your other Xtreme friends to sign up!.
+	   							More people more matches!"
+	   		puts no_matches_alert
+	   	else
+	   		matches.sort_by { |id, percent| percent }
+	   		puts matches
+	   	end
+   	end
+  end
+
+  def get_percent_match(pref, prof)
+  	cleanliness_level_score = get_attribute_weight((pref.cleanliness_level - prof.cleanliness_level))
+  	outgoingness_level_score = get_attribute_weight((pref.outgoingness_level - prof.outgoingness_level))
+  	quietness_level_score = get_attribute_weight((pref.quietness_level - prof.quietness_level))
+
+  	scores_sum = cleanliness_level_score + outgoingness_level_score + quietness_level_score
+  	highest_potential_positive_sum = 30 # add 10 for each attribute
+  	highest_potential_negative_sum = 30 # add 10 for each attribute
+  	score_sum_adjusted = score_sum + highest_potential_negative_sum # zero the highest potential negative
+  	percent_match = 100 * score_sum_adjusted / (highest_potential_negative_sum + highest_potential_positive_sum)
+  	return percent_match
+  end
+
+  def get_attribute_weight(q)
+  	q = q.abs
+  	if q == 0
+  		return 10
+  	elsif q == 1
+  		return 5
+  	elsif q == 2
+  		return 0
+  	elsif q == 3
+  		return -5
+  	else
+  		return -10
+  	end
+  end
 end
