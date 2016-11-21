@@ -32,6 +32,7 @@ class User < ApplicationRecord
 	   		matches.inspect
 	   	end
 	else
+		preferences_not_created_alert =	"Please fill out your preferences."
    	end
   end
 
