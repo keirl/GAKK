@@ -44,7 +44,7 @@ class User < ApplicationRecord
   	scores_sum = cleanliness_level_score + outgoingness_level_score + quietness_level_score
   	highest_potential_positive_sum = 30 # add 10 for each attribute
   	highest_potential_negative_sum = 30 # add 10 for each attribute
-  	score_sum_adjusted = score_sum + highest_potential_negative_sum # zero the highest potential negative
+  	score_sum_adjusted = scores_sum + highest_potential_negative_sum # zero the highest potential negative
   	percent_match = 100 * score_sum_adjusted / (highest_potential_negative_sum + highest_potential_positive_sum)
   	return percent_match
   end
