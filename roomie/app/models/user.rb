@@ -11,8 +11,9 @@ class User < ApplicationRecord
   	if defined? user.preferences != nil
   		matches = Hash.new
   		Profile.all.each do |prof|
+  		#	debugger
 	  		if defined? prof != nil
-	  			if user.preferences.gender != prof.gender || user.preferences.smoker != prof.is_a_smoker# || preferences.parent == prof.parent
+	  			if user.preferences.gender != prof.gender || user.preferences.smoker != prof.is_a_smoker || user.preferences.user_id == prof.user_id
 	  				next
 	  			end
 	  			percent_match = get_percent_match(user.preferences, prof)
@@ -24,10 +25,9 @@ class User < ApplicationRecord
 	   		end
 	   	end
 	   	if matches.empty?
-	   		no_matches_alert = "No matches were found yet. Sorry! Your preferences are just too Xtreme!"\
+	   		no_matches_alert =	"No matches were found yet. Sorry! Your preferences are just too Xtreme!"\
 	   							" Either adjust your preferences or tell your other Xtreme friends to sign up!."\
 	   							" More people more matches!"
-	   		no_matches_alert.inspect
 	   	else
 	   		matches.sort_by { |id, percent| percent }
 	   		matches.inspect
