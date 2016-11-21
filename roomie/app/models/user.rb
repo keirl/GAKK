@@ -9,14 +9,12 @@ class User < ApplicationRecord
 
   def get_matches
   	if preferences?
-  		# pref_score = calculate_preferences_score(preferences)
   		matches = Hash.new
   		Profile.all.each do |prof|
 	  		if prof?
 	  			if preferences.gender != prof.gender || preferences.smoker != prof.is_a_smoker# || preferences.parent == prof.parent
 	  				next
 	  			end
-	  			# prof_score = calculate_profile_score(prof)
 	  			percent_match = get_percent_match(preferences, prof)
 	  			if percent_match < 50
 	  				next
