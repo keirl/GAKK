@@ -20,8 +20,7 @@ class User < ApplicationRecord
 	  			if percent_match < 50
 	  				next
 	  			end
-	  			prof_parent_id = prof.parent.id
-	  			matches[:prof_parent_id] = percent_match
+	  			matches[prof.user_id] = percent_match
 	   		end
 	   	end
 	   	if matches.empty?
