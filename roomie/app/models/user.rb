@@ -13,7 +13,7 @@ class User < ApplicationRecord
   		Profile.all.each do |prof|
   		#	debugger
 	  		if prof != nil
-          debugger
+     #     debugger
 	  			if user.preferences.gender != prof.gender || user.preferences.smoker != prof.is_a_smoker || user.preferences.user_id == prof.user_id
 	  				next
 	  			end
@@ -34,36 +34,34 @@ class User < ApplicationRecord
           Match.create(user.id, id, percent)
         end
 	   	end
-	else
-		preferences_not_created_alert =	"Please fill out your preferences."
-   	end
+	  else
+		  preferences_not_created_alert =	"Please fill out your preferences."
+    end
   end
 
   def get_percent_match(pref, prof)
   	cleanliness_level_score = get_attribute_weight((pref.cleanliness_level - prof.cleanliness_level))
   	outgoingness_level_score = get_attribute_weight((pref.outgoingness_level - prof.outgoingness_level))
   	quietness_level_score = get_attribute_weight((pref.quietness_level - prof.quietness_level))
-
+    current_number_of_attributes = 3
+    highest_potential_positive_sum = 100
   	scores_sum = cleanliness_level_score + outgoingness_level_score + quietness_level_score
-  	highest_potential_positive_sum = 30 # add 10 for each attribute
-  	highest_potential_negative_sum = 30 # add 10 for each attribute
-  	score_sum_adjusted = scores_sum + highest_potential_negative_sum # zero the highest potential negative
-  	percent_match = 100 * score_sum_adjusted / (highest_potential_negative_sum + highest_potential_positive_sum)
+  	percent_match = 100 * scores_sum / (current_number_of_attributes * highest_potential_positive_sum)
   	return percent_match
   end
 
   def get_attribute_weight(q)
   	q = q.abs
   	if q == 0
-  		return 10
+  		return 100
   	elsif q == 1
-  		return 5
+  		return 75
   	elsif q == 2
-  		return 0
+  		return 50
   	elsif q == 3
-  		return -5
+  		return 25
   	else
-  		return -10
+  		return 0
   	end
   end
 end
