@@ -7,12 +7,13 @@ class User < ApplicationRecord
   has_one :profile
   has_one :preferences
 
-  def get_matches(user)
-  	if defined? user.preferences != nil
+  def create_matches(user)
+  	if user.preferences != nil
   		matches = Hash.new
   		Profile.all.each do |prof|
   		#	debugger
-	  		if defined? prof != nil
+	  		if prof != nil
+          debugger
 	  			if user.preferences.gender != prof.gender || user.preferences.smoker != prof.is_a_smoker || user.preferences.user_id == prof.user_id
 	  				next
 	  			end
@@ -29,7 +30,9 @@ class User < ApplicationRecord
 	   							" More people more matches!"
 	   	else
 	   		matches.sort_by { |id, percent| percent }
-	   		matches.inspect
+	   		matches.each do |id, percent|
+          Match.create(user.id, id, percent)
+        end
 	   	end
 	else
 		preferences_not_created_alert =	"Please fill out your preferences."

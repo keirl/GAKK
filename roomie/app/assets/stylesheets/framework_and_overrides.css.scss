@@ -133,6 +133,26 @@ section {
   @extend .well;
 }
 
+.matchesform {
+  padding-top: 90px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.matchesform form {
+  @extend .well;
+  @extend .well-lg;
+  padding-bottom: 40px;
+}
+.matchesform .right {
+  float: right !important;
+}
+.matchesform .button {
+  @extend .btn;
+  @extend .btn-primary;
+}
+.matchesform fieldset {
+  @extend .well;
+}
 
 #error_explanation:not(:empty) {
   @extend .alert;

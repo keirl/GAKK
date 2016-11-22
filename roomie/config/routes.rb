@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+#  get 'matches/index'
+
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   #resources :profiles 
@@ -14,6 +16,9 @@ Rails.application.routes.draw do
     resource :preferences
   end
 
+  resources :users do
+    resources :matches
+  end
 	
   devise_scope :user do
     authenticated :user do

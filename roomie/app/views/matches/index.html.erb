@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Matches</h1>
+<br>
+<table width="30%" class="new_table">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Percent_Match</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @matches.each do |match| %>
+      <tr>
+        <td><%= link_to  User.find(match.user_id_2).username, "user_profiles/#{User.find(match.user_id_2).user_profile.id}" %></td>
+        <td><%= match.percent_match %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
