@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   def create_matches(user)
   	if user.preferences != nil
+      Match.where(user_id_1: user.id).destroy
   		matches = Hash.new
   		Profile.all.each do |prof|
   		#	debugger
