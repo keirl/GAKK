@@ -14,7 +14,7 @@
   <tbody>
     <% @matches.each do |match| %>
       <tr>
-        <td><%= link_to  User.find(match.user_id_2).username, "user_profiles/#{User.find(match.user_id_2).user_profile.id}" %></td>
+        <td><%= link_to  User.find(match.user_id_2).profile.user_name, "user_profiles/#{User.find(match.user_id_2).profile.id}" %></td>
         <td><%= match.percent_match %></td>
       </tr>
     <% end %>
