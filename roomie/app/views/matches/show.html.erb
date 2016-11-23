@@ -1,10 +1,10 @@
 <div id="jumbo1" class="jumbotron">
 	<p id="notice"><%= notice %></p>
 
-	<h3>Match</h3>
-	<h3> <%= @match.percent_match %> </h3>
-	<h4> <%= @user2.profile.user_name %> </h4>
-	<h4> Send message to <%= @user2.profile.user_name %> </h4>
+	<h3 align="center">Match</h3>
+	<h3 align="center"> <%= @match.percent_match %> </h3>
+	<h4 align="center"> <%= @user2.profile.user_name %> </h4>
+	<h4 align="center"> Send message to <%= @user2.profile.user_name %> </h4>
 
 	<p>
 	  <strong>Gender:</strong>
@@ -35,5 +35,9 @@
 	  <strong>Quietness:</strong>
 	  <%= Profile.profileQuietnessLevel.key(@user2.profile.quietness_level) %>
 	</p>
+
+    <% if @user2.profile.street? %>
+    	<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@user2.profile.latitude}%2C#{@user2.profile.longitude}&key=AIzaSyD21LGyl1gmCSllj3pjilRZaALCO5ZaA_0" %>
+    <% end %>
 
 </div>
