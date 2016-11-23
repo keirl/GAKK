@@ -1,18 +1,39 @@
 <div id="jumbo1" class="jumbotron">
-<p id="notice"><%= notice %></p>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User id 1:</strong>
-  <%= @match.user_id_1 %>
-</p>
+	<h3>Match</h3>
+	<h3> <%= @match.percent_match %> </h3>
+	<h4> <%= @user2.profile.user_name %> </h4>
+	<h4> Send message to <%= @user2.profile.user_name %> </h4>
 
-<p>
-  <strong>User id 2:</strong>
-  <%= @match.user_id_2 %>
-</p>
+	<p>
+	  <strong>Gender:</strong>
+	  <%= @user2.profile.gender %>
+	</p>
 
-<p>
-  <strong>Percent Match:</strong>
-  <%= @match.percent_match %>
-</p>
+	<p>
+	  <strong>Smoker:</strong>
+	  <%= Profile.profileIsASmoker.key(@user2.profile.is_a_smoker) %>
+	</p>
+
+	<p>
+	  <strong>Pet Friendly:</strong>
+	  <%= Profile.profilePetFriendly.key(@user2.profile.pet_friendly) %>
+	</p>
+
+	<p>
+	  <strong>Cleanliness:</strong>
+	  <%= Profile.profileCleanlinessLevel.key(@user2.profile.cleanliness_level) %>
+	</p>
+
+	<p>
+	  <strong>Outgoingness:</strong>
+	  <%= Profile.profileOutgoingnessLevel.key(@user2.profile.outgoingness_level) %>
+	</p>
+
+	<p>
+	  <strong>Quietness:</strong>
+	  <%= Profile.profileQuietnessLevel.key(@user2.profile.quietness_level) %>
+	</p>
+
 </div>

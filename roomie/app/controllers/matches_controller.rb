@@ -11,6 +11,7 @@ class MatchesController < ApplicationController
   # GET /matches/1
   # GET /matches/1.json
   def show
+    @user2 = User.find(@match.user_id_2)
   end
 
   # GET /matches/new
