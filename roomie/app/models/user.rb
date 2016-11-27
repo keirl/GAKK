@@ -15,7 +15,7 @@ class User < ApplicationRecord
   		#	debugger
 	  		if prof != nil
      #     debugger
-	  			if user.preferences.gender != prof.gender || user.preferences.smoker != prof.is_a_smoker || user.preferences.user_id == prof.user_id
+	  			if user.preferences.gender != prof.gender || user.preferences.smoker != prof.is_a_smoker || user.preferences.pet_friendly != prof.pet_friendly || user.preferences.user_id == prof.user_id
 	  				next
 	  			end
 	  			percent_match = get_percent_match(user.preferences, prof)
