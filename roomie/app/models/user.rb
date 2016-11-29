@@ -8,13 +8,11 @@ class User < ApplicationRecord
   has_one :preferences
 
   def create_matches(user)
-  	if user.preferences != nil
+  	if user.preferences != nil && user.profile != nil
       Match.where(user_id_1: user.id).destroy_all
   		matches = Hash.new
   		Profile.all.each do |prof|
-  		#	debugger
-	  		if prof != nil
-     #     debugger
+	  		if prof != nil && User.find(prof.user_id).preferences != nil
 	  			if user.preferences.gender != prof.gender || user.preferences.smoker != prof.is_a_smoker || user.preferences.pet_friendly != prof.pet_friendly || user.preferences.user_id == prof.user_id
 	  				next
 	  			end
@@ -22,6 +20,10 @@ class User < ApplicationRecord
 	  			if percent_match < 50
 	  				next
 	  			end
+          percent_match_reversed = get_percent_match(User.find(prof.user_id).preferences, user.profile)
+          if percent_match_reversed < 50
+            next
+          end
 	  			matches[prof.user_id] = percent_match
 	   		end
 	   	end
