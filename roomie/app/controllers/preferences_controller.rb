@@ -55,7 +55,7 @@ class PreferencesController < ApplicationController
     puts "in update\n"
     @user = User.find(params[:user_id]);
     @preferences = @user.preferences;
-   
+
     respond_to do |format|
       if @preferences.update(preferences_params)
         format.html { redirect_to :back, notice: 'Preferences were successfully updated.' }

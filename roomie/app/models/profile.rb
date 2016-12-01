@@ -21,7 +21,7 @@ class Profile < ApplicationRecord
 	
 	def is_a_smoker_presence
 		errors.add(:is_a_smoker, "can't be blank") if is_a_smoker.nil?
-	end 
+	end
 
 	def pet_friendly_presence
 		errors.add(:pet_friendly, "can't be blank") if pet_friendly.nil?

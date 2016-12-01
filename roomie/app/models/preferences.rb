@@ -19,11 +19,11 @@ class Preferences < ApplicationRecord
 	
 	def smoker_presence
 		errors.add(:smoker, "can't be blank") if smoker.nil?
-	end 
+	end
 
 	def pet_friendly_presence
 		errors.add(:pet_friendly, "can't be blank") if pet_friendly.nil?
-	end 
+	end
 
 	def full_street_address
 		[street, city, state, postal_code].compact.join(', ')

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  #resources :profiles 
+  #resources :profiles
   devise_for :users
   get 'home/index'
   #root 'home#index'

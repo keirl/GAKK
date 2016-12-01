@@ -53,6 +53,7 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem "factory_girl_rails", "~> 4.0"
   gem 'email_spec'
+  gem 'rails_best_practices'
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
 end
@@ -60,7 +61,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# bootstrap #sass rails is added  
+# bootstrap #sass rails is added
 gem 'bootstrap-sass', '~> 3.3.6'
 
 # devise gem for user authentication

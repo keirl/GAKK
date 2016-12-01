@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20161121220011) do
     t.datetime "updated_at",            null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.index ["user_id"], name: "index_preferences_on_user_id", unique: true
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -74,6 +75,7 @@ ActiveRecord::Schema.define(version: 20161121220011) do
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
+    t.index ["user_id"], name: "index_profiles_on_user_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
