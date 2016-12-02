@@ -6,7 +6,11 @@
 	<h4 align="center"> <%= @user2.profile.user_name %> </h4>
 
 
-	<h4 align="center"> <%= link_to "Send Message to #{@user2.profile.user_name}", new_conversation_path, class: "btn btn-success" %> </h4>
+	<h4 align="center"> <%= link_to "Send Message to #{@user2.profile.user_name}",
+																	:controller => "conversations",
+																	:action => "new",
+																	:user2 => @user2.id,
+																	:class => "btn btn-success" %> </h4>
 
 	<p>
 	  <strong>Gender:</strong>
@@ -41,5 +45,7 @@
     <% if @user2.profile.street? %>
     	<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@user2.profile.latitude}%2C#{@user2.profile.longitude}&key=AIzaSyD21LGyl1gmCSllj3pjilRZaALCO5ZaA_0" %>
     <% end %>
+
+
 
 </div>

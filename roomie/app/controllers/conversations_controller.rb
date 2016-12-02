@@ -2,6 +2,8 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    @matching_user = User.find(params[:user2])
+
   end
 
   def create
@@ -35,7 +37,6 @@ class ConversationsController < ApplicationController
     params.require(:conversation).permit(:subject, :body,recipients:[])
   end
 
-begin
   def message_params(*keys)
     fetch_params(:message, *keys)
   end
@@ -49,5 +50,5 @@ begin
       end
     end
   end
-end
+
 end

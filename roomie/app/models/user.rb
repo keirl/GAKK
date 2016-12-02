@@ -77,7 +77,7 @@ class User < ApplicationRecord
   end
 
   def mailboxer_email(object)
-    self.email 
-  end
+    self.email
+	end
 
 end
