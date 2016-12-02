@@ -34,4 +34,20 @@ class ConversationsController < ApplicationController
   def conversation_params
     params.require(:conversation).permit(:subject, :body,recipients:[])
   end
+
+begin
+  def message_params(*keys)
+    fetch_params(:message, *keys)
+  end
+
+  def fetch_params(key, *subkeys)
+    params[key].instance_eval do
+      case subkeys.size
+        when 0 then self
+        when 1 then self[subkeys.first]
+        else subkeys.map{|k| self[k] }
+      end
+    end
+  end
+end
 end
