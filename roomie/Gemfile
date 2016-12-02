@@ -76,3 +76,5 @@ gem 'geocoder'
 
 # for the admin console
 gem 'rails_admin', '~> 1.0'
+
+gem 'mailboxer'
