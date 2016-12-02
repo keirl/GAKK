@@ -16,5 +16,6 @@ class CreatePreferences < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_index :preferences, :user_id
   end
 end

@@ -102,8 +102,6 @@ When(/^I click on show preference$/) do
   click_on 'Show'
 end
 
-
-
 Then(/^I should see error message$/) do
   assert_text 'error'
 end
