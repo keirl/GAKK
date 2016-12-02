@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   acts_as_messageable
 
+	scope :with_profile, -> { where('EXISTS(SELECT 1 FROM profiles WHERE user_id = users.id)') }
+
   def create_matches(user)
   	if user.preferences != nil && user.profile != nil
       Match.where(user_id_1: user.id).destroy_all
