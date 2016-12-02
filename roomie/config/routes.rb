@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   #resources :profiles
   devise_for :users
   get 'home/index'
-#root 'home#index'
+  #root :to => 'home#index'
 
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
   get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
@@ -42,5 +42,7 @@ Rails.application.routes.draw do
       post :untrash
     end
   end
+
+  root :to => 'home#index'
 
 end
