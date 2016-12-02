@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_one :profile
   has_one :preferences
 
+  acts_as_messageable
+
   def create_matches(user)
   	if user.preferences != nil && user.profile != nil
       Match.where(user_id_1: user.id).destroy_all
@@ -67,4 +69,13 @@ class User < ApplicationRecord
   		return 0
   	end
   end
+
+  def mailboxer_name
+    self.user_id
+  end
+
+  def mailboxer_email(object)
+    self.email 
+  end
+
 end
