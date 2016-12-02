@@ -38,7 +38,7 @@ class User < ApplicationRecord
 	   	else
 	   		matches.sort_by { |id, percent| percent }
 	   		matches.each do |id, percent|
-          Match.create(user_id_1: user.id, user_id_2: id, percent_match: percent)
+          Match.create(user_id_1: user.id, user_id_2: id, percent_match: percent, user_name: User.find(id).profile.user_name)
         end
 	   	end
 	  else
