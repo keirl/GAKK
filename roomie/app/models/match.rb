@@ -3,14 +3,16 @@ class Match < ApplicationRecord
   def self.create_matches(user)
   	if user.preferences != nil && user.profile != nil
       Match.where(user_id_1: user.id).destroy_all
-  		matches = Hash.new
   		Profile.all.each do |prof|
   		  current_user_preferences = User.find(prof.user_id).preferences
 	  	  if prof != nil && current_user_preferences != nil
-	  	    if user.preferences.gender != prof.gender ||
+	  	    if user.preferences.user_id == prof.user_id ||
+             user.preferences.gender != prof.gender ||
+             user.profile.gender != current_user_preferences.gender ||
 	  	       user.preferences.smoker != prof.is_a_smoker ||
+             user.profile.is_a_smoker != current_user_preferences.smoker ||
 	  	       user.preferences.pet_friendly != prof.pet_friendly ||
-	  	       user.preferences.user_id == prof.user_id
+             user.profile.pet_friendly != current_user_preferences.pet_friendly
 	  			  next
 	  			end
 	  			percent_match = Match.get_percent_match(user.preferences, prof)
@@ -21,8 +23,6 @@ class Match < ApplicationRecord
 	  			Match.create(user_id_1: user.id, user_id_2: prof.user_id, percent_match: percent_match, user_name: prof.user_name)
 	   		end
 	   	end
-	  else
-		  preferences_not_created_alert =	"Please fill out your preferences."
     end
   end
 
