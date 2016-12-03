@@ -17,7 +17,7 @@ Feature: As a user, I should be able to fill out the preferences to find a new r
     Then I should select my smoking preference: Yes
     Then I should select my pets preference: No
     Then I should select my cleanliness preference: Slightly messy 
-    Then I should select my outgoing preference: I want a roommate that guards the apartment 25-8
+    Then I should select my outgoing preference: I want a roommate that guards the apartment 24-7
     Then I should select my quietness preference: If I hear them I don't want them
     Then I should select my residence preference: Yes
     Then I should select my street preference: 355 5th Avenue
@@ -44,7 +44,7 @@ Feature: As a user, I should be able to fill out the preferences to find a new r
     Then I should select my smoking preference: Yes
     Then I should select my pets preference: No
     Then I should select my cleanliness preference: Slightly messy 
-    Then I should select my outgoing preference: I want a roommate that guards the apartment 25-8
+    Then I should select my outgoing preference: I want a roommate that guards the apartment 24-7
     Then I should select my quietness preference: If I hear them I don't want them
     Then I should select my residence preference: No
     Then I should submit the update
@@ -67,7 +67,7 @@ Feature: As a user, I should be able to fill out the preferences to find a new r
     Then I should select my smoking preference: Yes
     Then I should select my pets preference: No
     Then I should select my cleanliness preference: Slightly messy 
-    Then I should select my outgoing preference: I want a roommate that guards the apartment 25-8
+    Then I should select my outgoing preference: I want a roommate that guards the apartment 24-7
     Then I should select my quietness preference: If I hear them I don't want them
     Then I should select my residence preference: Yes
     Then I should fail to select my street preference: 355 5th Avenue
@@ -89,7 +89,7 @@ Scenario: User needs to create user preferences and needs a residence. Adds addr
     Then I should select my smoking preference: Yes
     Then I should select my pets preference: No
     Then I should select my cleanliness preference: Slightly messy 
-    Then I should select my outgoing preference: I want a roommate that guards the apartment 25-8
+    Then I should select my outgoing preference: I want a roommate that guards the apartment 24-7
     Then I should select my quietness preference: If I hear them I don't want them
     Then I should select my residence preference: Yes
     Then I should select my street preference: 355 5th Avenue!!
@@ -116,7 +116,7 @@ Scenario: User needs to create user preferences and needs a residence. Adds addr
     Then I should select my smoking preference: Yes
     Then I should select my pets preference: No
     Then I should select my cleanliness preference: Slightly messy 
-    Then I should select my outgoing preference: I want a roommate that guards the apartment 25-8
+    Then I should select my outgoing preference: I want a roommate that guards the apartment 24-7
     Then I should select my quietness preference: If I hear them I don't want them
     Then I should select my residence preference: Yes
     Then I should select my street preference: 355 5th Avenue
@@ -144,7 +144,7 @@ Scenario: User needs to create user preferences and needs a residence. Adds addr
     Then I should select my smoking preference: Yes
     Then I should select my pets preference: No
     Then I should select my cleanliness preference: Slightly messy 
-    Then I should select my outgoing preference: I want a roommate that guards the apartment 25-8
+    Then I should select my outgoing preference: I want a roommate that guards the apartment 24-7
     Then I should select my quietness preference: If I hear them I don't want them
     Then I should select my residence preference: Yes
     Then I should select my street preference: 355 5th Avenue
@@ -172,7 +172,7 @@ Scenario: User needs to create user preferences and needs a residence. Adds addr
     Then I should select my smoking preference: Yes
     Then I should select my pets preference: No
     Then I should select my cleanliness preference: Slightly messy 
-    Then I should select my outgoing preference: I want a roommate that guards the apartment 25-8
+    Then I should select my outgoing preference: I want a roommate that guards the apartment 24-7
     Then I should select my quietness preference: If I hear them I don't want them
     Then I should select my residence preference: Yes
     Then I should select my street preference: 355 5th Avenue
@@ -200,7 +200,7 @@ Scenario: User needs to create user preferences and needs a residence. Adds city
     Then I should select my smoking preference: Yes
     Then I should select my pets preference: No
     Then I should select my cleanliness preference: Slightly messy 
-    Then I should select my outgoing preference: I want a roommate that guards the apartment 25-8
+    Then I should select my outgoing preference: I want a roommate that guards the apartment 24-7
     Then I should select my quietness preference: If I hear them I don't want them
     Then I should select my residence preference: Yes
     Then I should select my street preference: 355 5th Avenue
