@@ -73,7 +73,7 @@ class User < ApplicationRecord
   end
 
   def mailboxer_name
-    self.profile.user_name
+    self.user_id
   end
 
   def mailboxer_email(object)
