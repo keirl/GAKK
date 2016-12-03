@@ -14,7 +14,7 @@ Feature: As a user, I should be able select matches among other users based on p
     Then I should see the matches button.
     Then I click on matches button.
     Then I should see user combined-username-2
-    Then I should see a matching value of 75
+    Then I should see a matching value of 87
     
   Scenario: User has a profile and preference and no similar users exist.
     Given I am an existing user with a profile and a preference
