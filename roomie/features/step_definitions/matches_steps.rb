@@ -39,7 +39,7 @@ Then(/^I should see a matching value of (.*)$/) do |value|
 end
 
 Then(/^I should see no matches found$/) do
-  assert_text 'No matches were found yet.' 
+  assert_text 'No matches found.  Please update your profile and preferences.' 
   save_and_open_page
 end
 

@@ -4,8 +4,9 @@ class MatchesController < ApplicationController
   # GET /matches
   # GET /matches.json
   def index
-    current_user.create_matches(current_user)
-    @matches = Match.where(user_id_1: current_user.id)
+    Match.create_matches(current_user)
+    @matches = Match.where(user_id_1: current_user.id).order(percent_match: :desc).limit(25)
+    @match_count = Match.where(user_id_1: current_user.id).count()
   end
 
   # GET /matches/1
