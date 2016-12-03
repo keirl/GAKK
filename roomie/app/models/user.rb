@@ -17,6 +17,8 @@ class User < ApplicationRecord
   end
 
   def mailboxer_email(object)
+    puts "user email was accessed"
+    puts self.email
     self.email
 	end
 
