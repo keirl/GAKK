@@ -22,6 +22,22 @@ Then(/^I should click on "([^"]*)" button$/) do |arg1|
   click_on(arg1)
 end
 
+Then(/^I confirm popup$/) do
+  begin
+    main, popup = page.driver.browser.window_handles
+    within_window(popup) do
+      click_on("Ok")
+    end
+  rescue
+  end
+end
+
+Then(/^I should not see "([^"]*)" button$/) do |arg1|
+  !assert_text("View")
+end
+
+
+
 
 
 
