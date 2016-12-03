@@ -78,3 +78,5 @@ gem 'geocoder'
 gem 'rails_admin', '~> 1.0'
 
 gem 'mailboxer'
+
+gem 'simplecov', :require => false, :group => :test
