@@ -7,7 +7,7 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    recipients = @matching_user
+    recipients = User.where(id: conversation_params[:user2])
     conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
     flash[:success] = "Your message was successfully sent!"
     redirect_to conversation_path(conversation)
