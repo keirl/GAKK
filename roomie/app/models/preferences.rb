@@ -70,11 +70,11 @@ class Preferences < ApplicationRecord
 	def self.preferencesOutgoingnessLevel
 		{
 			' ': nil,
-			'I want a roommate that guards the apartment 25-8': 1,
+			'I want a roommate that guards the apartment 24-7': 1,
 			'I want a roommate thats not too outgoing': 2,
             'I just want a normal roommate...': 3,
             'I want a roommate that likes meeting new people often': 4,
-            'I want a roommate that will be heard from a mile away': 5
+            'I want a roommate that is almost never home': 5
 		}
 	end
 
