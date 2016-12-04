@@ -3,8 +3,8 @@ class ConversationsController < ApplicationController
 
   def new
     @matching_user = User.find(params[:user2])
-    puts "matching user"
-    puts @matching_user.id
+    #puts "matching user"
+    #puts @matching_user.id
 
   end
 
@@ -13,8 +13,8 @@ class ConversationsController < ApplicationController
     #recipients = User.find(params[@matching_user.id])
     #recipients = User.where(id: conversation_params[:user2])
 
-    puts "recipients: "
-    puts recipients
+    #puts "recipients: "
+    #puts recipients
     conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
     flash[:success] = "Your message was successfully sent!"
     redirect_to conversation_path(conversation)
