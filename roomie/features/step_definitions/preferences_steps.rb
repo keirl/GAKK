@@ -88,7 +88,10 @@ end
 Then(/^I should submit the update$/) do
   click_on('Create Preferences') 
 end
-    
+
+Then(/^I should submit edit preferences$/) do
+  click_on('Update Preferences') 
+end
 
 Then(/^I should see preferences updated.$/) do
   assert_text 'Preferences were successfully created.'
