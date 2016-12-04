@@ -20,10 +20,8 @@ Feature: Mailboxer
     Then I should click on combined username 2
     Then I should see send message to combined username 2
     Then I should see text: "Recipients"
-    Then I should see text: "Subject"
     Then I should see text: "Message"
     Then I should select "2" from : "Recipients"
-    Then I should fill "conversation_subject" with "Looking for a roommate"
     Then I should fill "conversation_body" with "Hi combined_username-2, ....."
     Then I should click on "Send Message" button
     Then I should see text: "Your message was successfully sent!"
@@ -46,16 +44,14 @@ Feature: Mailboxer
     Then I should click on combined username 2
     Then I should see send message to combined username 2
     Then I should see text: "Recipients"
-    Then I should see text: "Subject"
     Then I should see text: "Message"
     Then I should select "2" from : "Recipients"
-    Then I should fill "conversation_subject" with "Looking for a roommate"
     Then I should fill "conversation_body" with "Hi combined_username-2, ....."
     Then I should click on "Send Message" button
     Then I should see text: "Your message was successfully sent!"
     Then "combined_user_2@gmail.com" should receive an email
     When I open the email
-    Then I should see "Mailboxer new message: Looking for a roommate" in the email subject
+    Then I should see "Mailboxer new message: Message From Potential Roommate" in the email subject
     Then I should see "Hi combined_username-2, ....." in the email body
 
   Scenario: The matching user should be able to reply to the user
@@ -76,10 +72,8 @@ Feature: Mailboxer
     Then I should click on combined username 2
     Then I should see send message to combined username 2
     Then I should see text: "Recipients"
-    Then I should see text: "Subject"
     Then I should see text: "Message"
     Then I should select "2" from : "Recipients"
-    Then I should fill "conversation_subject" with "Looking for a roommate"
     Then I should fill "conversation_body" with "Hi combined_username-2, ....."
     Then I should click on "Send Message" button
     Then I should see text: "Your message was successfully sent!"
@@ -117,10 +111,8 @@ Feature: Mailboxer
     Then I should click on combined username 2
     Then I should see send message to combined username 2
     Then I should see text: "Recipients"
-    Then I should see text: "Subject"
     Then I should see text: "Message"
     Then I should select "2" from : "Recipients"
-    Then I should fill "conversation_subject" with "Looking for a roommate"
     Then I should fill "conversation_body" with "Hi combined_username-2, ....."
     Then I should click on "Send Message" button
     Then I should see text: "Your message was successfully sent!"
@@ -161,10 +153,8 @@ Feature: Mailboxer
     Then I should click on combined username 2
     Then I should see send message to combined username 2
     Then I should see text: "Recipients"
-    Then I should see text: "Subject"
     Then I should see text: "Message"
     Then I should select "2" from : "Recipients"
-    Then I should fill "conversation_subject" with "Looking for a roommate"
     Then I should fill "conversation_body" with "Hi combined_username-2, ....."
     Then I should click on "Send Message" button
     Then I should see text: "Your message was successfully sent!"
@@ -215,10 +205,8 @@ Feature: Mailboxer
     Then I should click on combined username 2
     Then I should see send message to combined username 2
     Then I should see text: "Recipients"
-    Then I should see text: "Subject"
     Then I should see text: "Message"
     Then I should select "2" from : "Recipients"
-    Then I should fill "conversation_subject" with "Looking for a roommate"
     Then I should fill "conversation_body" with "Hi combined_username-2, ....."
     Then I should click on "Send Message" button
     Then I should see text: "Your message was successfully sent!"
@@ -244,10 +232,8 @@ Feature: Mailboxer
     Then I should click on combined username 2
     Then I should see send message to combined username 2
     Then I should see text: "Recipients"
-    Then I should see text: "Subject"
     Then I should see text: "Message"
     Then I should select "2" from : "Recipients"
-    Then I should fill "conversation_subject" with "Looking for a roommate"
     Then I should fill "conversation_body" with "Hi combined_username-2, ....."
     Then I should click on "Send Message" button
     Then I should see text: "Your message was successfully sent!"
@@ -287,10 +273,8 @@ Feature: Mailboxer
     Then I should click on combined username 2
     Then I should see send message to combined username 2
     Then I should see text: "Recipients"
-    Then I should see text: "Subject"
     Then I should see text: "Message"
     Then I should select "2" from : "Recipients"
-    Then I should fill "conversation_subject" with "Looking for a roommate"
     Then I should fill "conversation_body" with "Hi combined_username-2, ....."
     Then I should click on "Send Message" button
     Then I should see text: "Your message was successfully sent!"

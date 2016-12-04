@@ -15,7 +15,8 @@ class ConversationsController < ApplicationController
 
     #puts "recipients: "
     #puts recipients
-    conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
+    subject1 = 'Message From Potential Roommate'
+    conversation = current_user.send_message(recipients, conversation_params[:body], subject1).conversation
     flash[:success] = "Your message was successfully sent!"
     redirect_to conversation_path(conversation)
   end

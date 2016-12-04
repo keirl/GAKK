@@ -4,11 +4,6 @@
       <%= f.select(:recipients, User.where(id: @matching_user.id).collect  {|p| [ p.id ] }, {}, { multiple: true , class: "form-control" })%>
       <!--%= f.select(:recipients, User.with_profile.collect  {|p| [ p.id ] }, {}, { multiple: true , class: "form-control" })%-->
 
-    </div>
-    <div class="form-group">
-      <%= f.label :subject %>
-      <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
-    </div>
     <div class="form-group">
       <%= f.label :message %>
       <%= f.text_area :body, class: 'form-control',placeholder: "Type your message here", rows: 4  %>
