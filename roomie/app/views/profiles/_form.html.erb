@@ -28,7 +28,7 @@
 <div class="profileform">
 
 
-  <%= form_for([@user, @profile], url: user_profile_path(@user)) do |f| %>
+  <%= form_for([@user, @profile], url: user_profile_path(@user), :html => { :class => 'form-horizontal', multipart: true }) do |f| %>
       <div class="actions" style="float:right; margin-top:-25px; margin-right:-25px;">
         <%= link_to "X", home_index_path, {:class => "btn btn-default"} %>
       </div>
@@ -111,10 +111,44 @@
           <%= f.label :postal_code %>
           <%= f.text_field :postal_code, :id => "postal_code" %>
         </div>
+
+        <div class="control-group">
+          <%= f.label :pictures, :class => 'control-label' %>
+          <div class="controls">
+            <%= file_field_tag "avatars[]", type: :file, multiple: true %>
+          </div>
+        </div>
       </div>
+
 
       <div class="actions">
         <%= f.submit %>
+      </div>
+
+      <div class="row">
+        <ul class="thumbnails files">
+          <% if @pictures %>
+              <% @pictures.each do |pic| %>
+                  <li class="span3" id="picture_<%= pic.id %>">
+                    <div class="thumbnail">
+                      <%= image_tag pic.avatar.url %>
+                      <div class="caption">
+                        <p style="text-align: center;">
+                          <%= link_to "Edit picture", picture_path(pic) %>
+
+                          <%=
+                            link_to "Delete picture", pic,
+                                    :data => { :confirm => "Are you sure?" },
+                                    :method => :delete
+                          %>
+
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+              <% end %>
+          <% end %>
+        </ul>
       </div>
 
       <% if @profile.street? %>

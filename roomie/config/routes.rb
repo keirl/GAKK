@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pictures
 #  get 'matches/index'
 
   devise_for :admins

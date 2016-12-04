@@ -18,6 +18,7 @@ class Profile < ApplicationRecord
 	geocoded_by :full_street_address   # can also be an IP address
 	after_validation :geocode          # auto-fetch coordinates
 
+	has_many :pictures, :dependent => :destroy
 	
 	def is_a_smoker_presence
 		errors.add(:is_a_smoker, "can't be blank") if is_a_smoker.nil?

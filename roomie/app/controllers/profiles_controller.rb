@@ -26,6 +26,8 @@ class ProfilesController < ApplicationController
   def edit
     @user = User.find(params[:user_id]);
     @profile = @user.profile
+    @pictures = @profile.pictures
+
   end
 
   # POST /profiles
@@ -40,6 +42,13 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
+        if params[:avatars]
+          #===== The magic is here ;)
+          params[:avatars].each { |image|
+            @profile.pictures.create(avatar: image)
+          }
+        end
+
         format.html { redirect_to edit_user_profile_path(@user,@profile), notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: user_profile_path(@profile,@user) }
       else
@@ -55,9 +64,16 @@ class ProfilesController < ApplicationController
     puts "in update\n"
     @user = User.find(params[:user_id]);
     @profile = @user.profile;
+    @pictures = @profile.pictures
 
     respond_to do |format|
       if @profile.update(profile_params)
+        if params[:avatars]
+          #===== The magic is here ;)
+          params[:avatars].each { |image|
+            @profile.pictures.create(avatar: image)
+          }
+        end
         format.html { redirect_to :back , notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
       else
@@ -94,6 +110,7 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:user_name, :gender, :is_a_smoker, :pet_friendly, :cleanliness_level, :outgoingness_level, :quietness_level, :has_residence_already, :street, :city, :state, :postal_code)
+      params.require(:profile).permit(:user_name, :gender, :is_a_smoker, :pet_friendly, :cleanliness_level, :outgoingness_level, :quietness_level, :has_residence_already, :street, :city, :state, :postal_code,
+                                      :pictures )
     end
 end
