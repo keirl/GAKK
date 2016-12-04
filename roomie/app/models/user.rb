@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :profile
-  has_one :preferences
+  has_one :profile, :dependent => :destroy
+  has_one :preferences, :dependent => :destroy
 
   acts_as_messageable
 
