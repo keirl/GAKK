@@ -192,3 +192,11 @@ Then(/^I should see Email not found\.$/) do
   assert_text("Email not found")
 end
 
+Then(/^I should click on Cancel my account button$/) do
+   click_on("Cancel my account")
+   page.driver.browser.switch_to.alert.accept
+end
+
+Then(/^I should see cancel account confirmation$/) do
+  assert_text("Bye! Your account has been successfully cancelled.")
+end
