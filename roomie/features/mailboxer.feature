@@ -72,7 +72,7 @@ Feature: Mailboxer
     Then I should see the matches button.
     Then I click on matches button.
     Then I should see user combined-username-2
-    Then I should see a matching value of 75
+    Then I should see a matching value of 87
     Then I should click on combined username 2
     Then I should see send message to combined username 2
     Then I should see text: "Recipients"
@@ -113,7 +113,7 @@ Feature: Mailboxer
     Then I should see the matches button.
     Then I click on matches button.
     Then I should see user combined-username-2
-    Then I should see a matching value of 75
+    Then I should see a matching value of 87
     Then I should click on combined username 2
     Then I should see send message to combined username 2
     Then I should see text: "Recipients"
@@ -157,7 +157,7 @@ Feature: Mailboxer
     Then I should see the matches button.
     Then I click on matches button.
     Then I should see user combined-username-2
-    Then I should see a matching value of 75
+    Then I should see a matching value of 87
     Then I should click on combined username 2
     Then I should see send message to combined username 2
     Then I should see text: "Recipients"
