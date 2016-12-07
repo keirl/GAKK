@@ -186,5 +186,12 @@ FactoryGirl.define do
     city 'New York'
     state 'NY'
     postal_code '10027'
-  end  
+  end
+
+
+  factory :admin do
+    email "admin@gmail.com"
+    password "topsecret"
+    password_confirmation "topsecret"
+  end
 end
