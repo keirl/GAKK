@@ -10,15 +10,23 @@ user = User.create! :email => 'guy@gmail.com', :password => 'topsecret', :passwo
 user = User.create! :email => 'keirl@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret', :confirmed_at => Time.now
 user = User.create! :email => 'kourtney@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret', :confirmed_at => Time.now
 user4 = User.create! :email => 'akila@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret', :confirmed_at => Time.now
-user11 = User.create! :email => 'guy11@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
-user12 = User.create! :email => 'guy12@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
-user13 = User.create! :email => 'guy13@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
-user14 = User.create! :email => 'guy14@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
-user15 = User.create! :email => 'guy15@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
-user16 = User.create! :email => 'guy16@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
-user17 = User.create! :email => 'guy17@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
-user18 = User.create! :email => 'guy18@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
-user19 = User.create! :email => 'guy19@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user11 = User.create! :email => 'jackson@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user12 = User.create! :email => 'zoe@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user13 = User.create! :email => 'aria@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user14 = User.create! :email => 'aiden@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user15 = User.create! :email => 'skyler@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user16 = User.create! :email => 'lucy@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user17 = User.create! :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user18 = User.create! :email => 'grace@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user19 = User.create! :email => 'liam@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user20 = User.create! :email => 'sophia@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user21 = User.create! :email => 'emma@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user22 = User.create! :email => 'olivia@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user23 = User.create! :email => 'ava@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user24 = User.create! :email => 'mia@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user25 = User.create! :email => 'madison@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user26 = User.create! :email => 'lucas@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
+user27 = User.create! :email => 'logan@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret',:confirmed_at => Time.now
 
 Profile.create(user_name: 'akila3',
                gender: 'Male',
@@ -36,7 +44,7 @@ Profile.create(user_name: 'akila3',
                latitude: nil,
                longitude: nil)
 
-Profile.create(user_name: 'guy11',
+Profile.create(user_name: 'jackson',
                gender: 'Male',
                is_a_smoker: true,
                pet_friendly: false,
@@ -67,7 +75,7 @@ Preferences.create(gender: 'Male',
                latitude: nil,
                longitude: nil)
 
-Profile.create(user_name: 'guy12',
+Profile.create(user_name: 'zoe',
                gender: 'Female',
                is_a_smoker: false,
                pet_friendly: true,
@@ -98,7 +106,7 @@ Preferences.create(gender: 'Male',
                latitude: nil,
                longitude: nil)
 
-Profile.create(user_name: 'guy13',
+Profile.create(user_name: 'aria',
                gender: 'Female',
                is_a_smoker: true,
                pet_friendly: false,
@@ -129,7 +137,7 @@ Preferences.create(gender: 'Male',
                latitude: nil,
                longitude: nil)
 
-Profile.create(user_name: 'guy14',
+Profile.create(user_name: 'aiden',
                gender: 'Male',
                is_a_smoker: true,
                pet_friendly: false,
@@ -160,7 +168,7 @@ Preferences.create(gender: 'Male',
                latitude: nil,
                longitude: nil)
 
-Profile.create(user_name: 'guy15',
+Profile.create(user_name: 'skyler',
                gender: 'Female',
                is_a_smoker: true,
                pet_friendly: false,
@@ -191,7 +199,7 @@ Preferences.create(gender: 'Male',
                latitude: nil,
                longitude: nil)
 
-Profile.create(user_name: 'guy16',
+Profile.create(user_name: 'lucy',
                gender: 'Female',
                is_a_smoker: false,
                pet_friendly: true,
@@ -207,7 +215,7 @@ Profile.create(user_name: 'guy16',
                latitude: nil,
                longitude: nil)
 
-Preferences.create(gender: 'Male',
+Preferences.create(gender: 'Female',
                smoker: true,
                pet_friendly: false,
                cleanliness_level: 1,
@@ -222,7 +230,7 @@ Preferences.create(gender: 'Male',
                latitude: nil,
                longitude: nil)
 
-Profile.create(user_name: 'guy17',
+Profile.create(user_name: 'john',
                gender: 'Male',
                is_a_smoker: true,
                pet_friendly: true,
@@ -253,7 +261,7 @@ Preferences.create(gender: 'Male',
                latitude: nil,
                longitude: nil)
 
-Profile.create(user_name: 'guy18',
+Profile.create(user_name: 'grace',
                gender: 'Female',
                is_a_smoker: true,
                pet_friendly: true,
@@ -284,7 +292,7 @@ Preferences.create(gender: 'Male',
                latitude: nil,
                longitude: nil)
 
-Profile.create(user_name: 'guy19',
+Profile.create(user_name: 'liam',
                gender: 'Male',
                is_a_smoker: false,
                pet_friendly: false,
@@ -312,6 +320,254 @@ Preferences.create(gender: 'Male',
                state: 'NY',
                postal_code: '10016',
                user_id: user19.id,
+               latitude: nil,
+               longitude: nil)
+
+Profile.create(user_name: 'sophia',
+               gender: 'Female',
+               is_a_smoker: false,
+               pet_friendly: true,
+               cleanliness_level: 3,
+               outgoingness_level: 4,
+               quietness_level: 1,
+               has_residence_already: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user20.id,
+               latitude: nil,
+               longitude: nil)
+
+Preferences.create(gender: 'Male',
+               smoker: false,
+               pet_friendly: true,
+               cleanliness_level: 2,
+               outgoingness_level: 3,
+               quietness_level: 4,
+               looking_for_residence: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user20.id,
+               latitude: nil,
+               longitude: nil)
+
+Profile.create(user_name: 'emma',
+               gender: 'Female',
+               is_a_smoker: true,
+               pet_friendly: true,
+               cleanliness_level: 3,
+               outgoingness_level: 4,
+               quietness_level: 5,
+               has_residence_already: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user21.id,
+               latitude: nil,
+               longitude: nil)
+
+Preferences.create(gender: 'Male',
+               smoker: false,
+               pet_friendly: true,
+               cleanliness_level: 2,
+               outgoingness_level: 3,
+               quietness_level: 2,
+               looking_for_residence: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user21.id,
+               latitude: nil,
+               longitude: nil)
+
+Profile.create(user_name: 'olivia',
+               gender: 'Female',
+               is_a_smoker: false,
+               pet_friendly: false,
+               cleanliness_level: 3,
+               outgoingness_level: 4,
+               quietness_level: 5,
+               has_residence_already: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user22.id,
+               latitude: nil,
+               longitude: nil)
+
+Preferences.create(gender: 'Male',
+               smoker: false,
+               pet_friendly: false,
+               cleanliness_level: 5,
+               outgoingness_level: 1,
+               quietness_level: 2,
+               looking_for_residence: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user22.id,
+               latitude: nil,
+               longitude: nil)
+
+Profile.create(user_name: 'ava',
+               gender: 'Female',
+               is_a_smoker: true,
+               pet_friendly: false,
+               cleanliness_level: 3,
+               outgoingness_level: 4,
+               quietness_level: 5,
+               has_residence_already: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user23.id,
+               latitude: nil,
+               longitude: nil)
+
+Preferences.create(gender: 'Female',
+               smoker: true,
+               pet_friendly: true,
+               cleanliness_level: 3,
+               outgoingness_level: 3,
+               quietness_level: 3,
+               looking_for_residence: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user23.id,
+               latitude: nil,
+               longitude: nil)
+
+Profile.create(user_name: 'mia',
+               gender: 'Female',
+               is_a_smoker: false,
+               pet_friendly: true,
+               cleanliness_level: 3,
+               outgoingness_level: 3,
+               quietness_level: 4,
+               has_residence_already: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user24.id,
+               latitude: nil,
+               longitude: nil)
+
+Preferences.create(gender: 'Female',
+               smoker: false,
+               pet_friendly: true,
+               cleanliness_level: 2,
+               outgoingness_level: 3,
+               quietness_level: 4,
+               looking_for_residence: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user24.id,
+               latitude: nil,
+               longitude: nil)
+
+Profile.create(user_name: 'madison',
+               gender: 'Female',
+               is_a_smoker: true,
+               pet_friendly: false,
+               cleanliness_level: 3,
+               outgoingness_level: 3,
+               quietness_level: 4,
+               has_residence_already: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user25.id,
+               latitude: nil,
+               longitude: nil)
+
+Preferences.create(gender: 'Female',
+               smoker: true,
+               pet_friendly: false,
+               cleanliness_level: 2,
+               outgoingness_level: 5,
+               quietness_level: 2,
+               looking_for_residence: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user25.id,
+               latitude: nil,
+               longitude: nil)
+
+Profile.create(user_name: 'lucas',
+               gender: 'Male',
+               is_a_smoker: true,
+               pet_friendly: false,
+               cleanliness_level: 2,
+               outgoingness_level: 3,
+               quietness_level: 4,
+               has_residence_already: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user26.id,
+               latitude: nil,
+               longitude: nil)
+
+Preferences.create(gender: 'Male',
+               smoker: true,
+               pet_friendly: false,
+               cleanliness_level: 4,
+               outgoingness_level: 4,
+               quietness_level: 4,
+               looking_for_residence: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user26.id,
+               latitude: nil,
+               longitude: nil)
+
+Profile.create(user_name: 'logan',
+               gender: 'Male',
+               is_a_smoker: false,
+               pet_friendly: true,
+               cleanliness_level: 2,
+               outgoingness_level: 3,
+               quietness_level: 4,
+               has_residence_already: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user27.id,
+               latitude: nil,
+               longitude: nil)
+
+Preferences.create(gender: 'Male',
+               smoker: false,
+               pet_friendly: true,
+               cleanliness_level: 4,
+               outgoingness_level: 3,
+               quietness_level: 2,
+               looking_for_residence: true,
+               street: '123 lexington avenue',
+               city: 'New York',
+               state: 'NY',
+               postal_code: '10016',
+               user_id: user27.id,
                latitude: nil,
                longitude: nil)
 
