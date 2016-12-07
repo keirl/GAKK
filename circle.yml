@@ -5,7 +5,7 @@ dependencies:
           roomie
 database:
   override:
-    - ./bin/rails db:migrate RAILS_ENV=test
+    - rails db:migrate RAILS_ENV=test
 test:
   pre:
     - mozdownload --version latest --destination firefox.tar.bz2
