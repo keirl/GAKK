@@ -1,11 +1,12 @@
+machine:
+  environment:
+    RAILS_ENV: test
+    
 dependencies:
   override:
     - bundle install: # note the colon here
         pwd:
           roomie
-database:
-  override:
-    - rails db:migrate RAILS_ENV=test
 test:
   pre:
     - mozdownload --version latest --destination firefox.tar.bz2
